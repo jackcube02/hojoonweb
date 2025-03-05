@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    background-color: rgb(13, 13, 13);
+    font-family: 'SUIT', sans-serif;
+}
+
+header{
+    margin-right: 131px;
+    margin-left: 131px;
+    margin-top: 30px;
+    padding: 10px;
+    position: relative;
+    border: 1px solid white;
+}
+
+header img{
+    width: 128px;
+}
+
+header img:hover{
+    opacity: 0.5;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+header ul{
+    list-style-type: none;
+    display: inline-block;
+    float: right;
+}
+
+header li{
+    float:left;
+    margin-left: 20px;
+}
+
+ul > li > a > img{
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+#container{
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    border: 1px solid white;
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+}
+
+.grid-item{
+    overflow: hidden;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.grid-item img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border: 1px solid white;
+}
+
+.grid-item img:hover{
+    transform: scale(0.9);
+    opacity: 0.5;
+    transition: 0.8s;
+}
+
+/* container-content + textbox CSS */
+
+#container-content{
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    border: 1px solid white;
+    width: 80%;
+
+}
+
+.textbox{
+    border: 1px solid white;
+    margin: 30px;
+}
+
+.maintext, .caption{
+    color: white;
+}
+
+.maintext{
+    font-weight: 900;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.maintext:hover{
+    color: black;
+    background-color: red;
+    transition: 0.4s;
+}
+
+.subtext{
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.subtext{
+    color: rgb(140, 140, 140);
+}
+
+.caption{
+    font-weight: 200;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.picturebox{
+    border: 1px solid white;
+    margin-top: 30px;
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 4fr);
+    text-align: center;
+}
+
+.picturebox img{
+    width: 90%;
+    padding: 20px;
+}
+
+.gridoption1{
+    margin-top: 30px;
+    grid-column: 1 /3;
+    grid-row: 1/ 2;
+}
+
+.gridoption2{
+    grid-column: 1 /3;
+    grid-row: 2/ 3;
+}
+
+/* musicbox CSS */
+
+.musicbox{
+    border: 1px solid white;
+    padding: 30px;
+    margin: 30px;
+}
+
+/* videobox CSS */
+
+.videobox{
+    border: 1px solid white;
+    padding: 30px;
+    margin: 30px;
+}
+
+/* profile-box CSS */
+.profile-box{
+    border: 1px solid white;
+    padding: 30px;
+    margin: 30px;
+    text-align: center;
+}
+
+/* footer CSS */
+footer p{
+    margin-bottom: 100px;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+}
