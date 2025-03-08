@@ -249,8 +249,14 @@ footer p{
     }
 
     .textbox{
-        border: 1px solid white;
-        margin: 20px;
+        border: none;
+        margin: 0px;
+    }
+
+    .maintext, .subtext, .caption{
+        margin: 0px;
+        margin-top: 30px;
+        padding: 0px;
     }
 
     .maintext {
@@ -264,10 +270,10 @@ footer p{
 
     .picturebox{
         display: block;
-        border: 1px solid white;
         margin-top: 30px;
-        margin: 20px;
+        margin: 0px;
         text-align: center;
+        border: none;
     }
 
 
@@ -285,19 +291,31 @@ footer p{
 
     .videobox{
         padding: 10px;
+        margin: 0px;
+        border: none;
     }
 
     .profile-box{
-        padding: 20px;
+        margin: 0;
+        border: none;
+        padding: 10px;
     }
 
     .profile-box img{
         width: 100%;
     }
 
+    .musicbox{
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        margin-top: 30px;
+        width: 90%;
+    }
+
     .musicbox-video{
         margin: 0 auto;
-        width: 100%;
+        width: 90%;
         margin-top: 30px;
     }
     .musicbox-video iframe{
