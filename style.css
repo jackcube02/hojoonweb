@@ -35,7 +35,7 @@ html, body{
 
 p{
     margin: 0;
-    font-family: 'Apple SD Gothic Neo';
+    font-family: "futura-pt", sans-serif;
 }
 
 a{
@@ -53,24 +53,24 @@ a{
 }
 
 #wrap{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
     display: flex;
     flex: 1;
-    flex-direction: row;
-    column-gap: 50px;
+    flex-direction: column;
 }
 
 #header{
     display: flex;
-    flex-direction: column;
-    row-gap: 10%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-top: 5px;
+    border-top: 5px solid black;
 }
 
 /* header Css*/
 .header-logo{
     /* font-size: 20px; */
-    margin-bottom: 50px;
 }
 
 .header-logo img{
@@ -78,15 +78,19 @@ a{
 }
 
 .header-nav {
+    display: flex;
+    flex-direction: row;
     font-size: 1.2rem;
+    align-items: center;
 }
 
 .header-nav li{
-    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 #index-main{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,10 +116,16 @@ a{
     align-items: center;
 }
 
+.grid-item :hover{
+    opacity: 70%;
+    transition: 0.3s;
+}
+
 .grid-item img{
     width: 100%;
+    padding-top: 10px;
     object-fit: contain;
-    /* border: 1px dashed black; */
+    border-top: 5px solid black;
 }
 
 .grid-item p{
@@ -135,6 +145,11 @@ a{
     align-items: center;
 }
 
+.flex-item{
+    border-top: 5px solid black;
+    padding: 10px;
+}
+
 /* music-grid CSS */
 #music-grid{
     width: 100%;
@@ -145,6 +160,11 @@ a{
     row-gap: 50px;
     justify-content: center;
     align-items: center;
+}
+
+.grid-item-music{
+    border-top: 5px solid black;
+    padding: 10px;
 }
 
 /* contact-main CSS */
@@ -169,6 +189,36 @@ a{
     font-weight: 400;
 }
 
+/* photo CSS */
+#photo-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 50px;
+    row-gap: 50px;
+}
+
+.photo-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-item img{
+    width: 100%;
+    padding-top: 10px;
+    object-fit: contain;
+    border-top: 5px solid black;
+}
+
+.photo-item p{
+    font-size: 0.8rem;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+
 
 /* footer CSS */
 #footer{
@@ -176,9 +226,9 @@ a{
     flex-direction: row;
     column-gap: 30px;
     justify-content: space-between;
-    margin-top: 50px;
-    padding-top: 5px;
+    margin-top: 60px;
     margin-bottom: 50px;
+    padding-top: 5px;
     font-size: 0.8rem;
     border-top: 5px solid black;
 }
