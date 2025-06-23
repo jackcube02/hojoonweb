@@ -82,12 +82,9 @@ a{
 .header-nav {
     display: flex;
     flex-direction: row;
+    column-gap: 20px;
     font-size: 1.2rem;
     align-items: center;
-}
-
-.header-nav li{
-    margin-right: 20px;
 }
 
 #index-main{
@@ -282,4 +279,12 @@ a{
     column-gap: 20px;
     row-gap: 100px;
   }
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    font-size: 1.2rem;
+    align-items: center;
+}
 }
