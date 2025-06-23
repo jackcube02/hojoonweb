@@ -31,6 +31,8 @@ html, body{
     font-family: "futura-pt", sans-serif;
     font-weight: 400;
     font-style: normal;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 p{
@@ -146,8 +148,7 @@ a{
 }
 
 .flex-item{
-    border-top: 5px solid black;
-    padding: 10px;
+    width: 100%;
 }
 
 /* music-grid CSS */
@@ -219,7 +220,6 @@ a{
 }
 
 
-
 /* footer CSS */
 #footer{
     display: flex;
@@ -231,4 +231,55 @@ a{
     padding-top: 5px;
     font-size: 0.8rem;
     border-top: 5px solid black;
+}
+
+/* 반응형 CSS */
+
+@media (max-width : 768px) {
+#header{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    padding-top: 5px;
+    border-top: 0px solid black;
+}
+
+#footer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    font-size: 0.8rem;
+    border-top: 5px solid black;
+}
+
+#main-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#wrap{
+    margin-top: 30px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+#main-grid,
+#music-grid,
+#photo-grid {
+    grid-template-columns: repeat(1, 1fr);  /* 또는 2개 */
+    column-gap: 20px;
+    row-gap: 100px;
+  }
 }
