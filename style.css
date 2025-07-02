@@ -87,7 +87,7 @@ a{
     flex-direction: row;
     column-gap: 20px;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     align-items: center;
 }
 
@@ -276,8 +276,8 @@ a{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #wrap{
@@ -299,7 +299,7 @@ a{
     display: flex;
     flex-direction: row;
     column-gap: 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     align-items: center;
     }
 }
