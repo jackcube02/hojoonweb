@@ -23,21 +23,24 @@ font-family: "futura-pt-bold", sans-serif;
 font-weight: 700;
 font-style: italic; */
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "futura-pt", sans-serif;
-    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
     font-style: normal;
     max-width: 100%;
     overflow-x: hidden;
 }
 
 p{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin: 0;
-    font-family: "futura-pt", sans-serif;
 }
 
 a{
@@ -67,7 +70,7 @@ a{
     justify-content: space-between;
     margin-bottom: 60px;
     padding-top: 5px;
-    border-top: 5px solid black;
+    border-top: 10px solid black;
 }
 
 /* header Css*/
@@ -83,6 +86,7 @@ a{
     display: flex;
     flex-direction: row;
     column-gap: 20px;
+    font-weight: 500;
     font-size: 1.2rem;
     align-items: center;
 }
@@ -97,6 +101,23 @@ a{
 
 #index-main video{
     width: 100%;
+}
+
+/* web.html Css */
+
+#web-grid{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.web-grid-item p{
+    display: inline-block;
+    border-top: 5px solid black;
+    font-weight: 600;
+    font-size: 8rem;
 }
 
 /* main-grid CSS */
@@ -128,7 +149,6 @@ a{
 }
 
 .grid-item p{
-    font-family: "futura-pt", sans-serif;
     margin-top: 10px;
     font-size: 0.7rem;
     font-weight: 400;
@@ -165,28 +185,6 @@ a{
     padding: 10px;
 }
 
-/* contact-main CSS */
-#contact-main{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-maintext p{
-    font-size: 5rem;
-    font-family: "futura-pt", sans-serif;
-    font-weight: 400;
-    margin-bottom: 50px;
-}
-
-.contact-subtext p{
-    font-size: 1rem;
-    font-family: "futura-pt", sans-serif;
-    font-weight: 400;
-}
-
 /* photo CSS */
 #photo-grid{
     display: grid;
@@ -212,7 +210,7 @@ a{
 
 .photo-item p{
     font-size: 0.8rem;
-    font-weight: 900;
+    font-weight: 400;
     margin-top: 10px;
 }
 
@@ -223,11 +221,12 @@ a{
     flex-direction: row;
     column-gap: 30px;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 100px;
     margin-bottom: 50px;
     padding-top: 5px;
+    font-weight: 300;
     font-size: 0.8rem;
-    border-top: 5px solid black;
+    /* border-top: 5px solid black; */
 }
 
 /* 반응형 CSS */
@@ -255,6 +254,22 @@ a{
     padding-top: 5px;
     font-size: 0.8rem;
     border-top: 5px solid black;
+}
+
+#web-grid{
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.web-grid-item p{
+    display: inline-block;
+    margin-top: 30px;
+    border-top: 5px solid black;
+    font-weight: 600;
+    font-size: 3rem;
 }
 
 #main-wrapper{
