@@ -1,45 +1,21 @@
-/* Futura PT Book
-font-family: "futura-pt", sans-serif;
-font-weight: 400;
-font-style: normal;
-Futura PT Book Oblique
-font-family: "futura-pt", sans-serif;
-font-weight: 400;
-font-style: italic;
-Futura PT Heavy
-font-family: "futura-pt", sans-serif;
-font-weight: 700;
-font-style: normal;
-Futura PT Heavy Oblique
-font-family: "futura-pt", sans-serif;
-font-weight: 700;
-font-style: italic;
-Futura PT Bold
-font-family: "futura-pt-bold", sans-serif;
-font-weight: 700;
-font-style: normal;
-Futura PT Bold Oblique
-font-family: "futura-pt-bold", sans-serif;
-font-weight: 700;
-font-style: italic; */
-@import url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "helvetica-neue-lt-pro","Pretendard", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    max-width: 100%;
+    max-width: 100%;    
     overflow-x: hidden;
+    cursor: crosshair;
+}
+
+::selection {
+  background: black;   /* 선택 영역 배경색 */
+  color: white;        /* 선택한 텍스트 색상 */
 }
 
 p{
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     margin: 0;
 }
 
@@ -58,7 +34,6 @@ a{
 }
 
 #wrap{
-    margin-top: 30px;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -69,14 +44,11 @@ a{
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 60px;
-    padding-top: 5px;
-    border-top: 10px solid black;
+    padding-top: 10px;
+    border-top: 30px solid black;
 }
 
 /* header Css*/
-.header-logo{
-    /* font-size: 20px; */
-}
 
 .header-logo img{
     width: 64px;
@@ -95,7 +67,7 @@ a{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
 }
 
@@ -115,9 +87,7 @@ a{
 
 .web-grid-item p{
     display: inline-block;
-    border-top: 5px solid black;
-    font-weight: 600;
-    font-size: 8rem;
+    font-size: 6rem;
 }
 
 /* main-grid CSS */
@@ -145,13 +115,87 @@ a{
     width: 100%;
     padding-top: 10px;
     object-fit: contain;
-    border-top: 5px solid black;
 }
 
 .grid-item p{
     margin-top: 10px;
     font-size: 0.7rem;
     font-weight: 400;
+}
+
+/* container CSS */
+
+#container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.container-maintext{
+    font-weight: 900;
+    font-size: 6rem;
+}
+
+.container-subtext{
+    padding-bottom: 40px;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 140%;
+}
+
+.container-slider{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto;
+    
+}
+
+.slider-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.container-slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding: 0 10px; /* 이미지 간 간격 */
+  box-sizing: border-box;
+}
+
+
+.container-main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+}
+
+.container-caption{
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+}
+
+.captionKr{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    word-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+.captionEn{
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2
 }
 
 /* video-flex CSS */
@@ -188,10 +232,10 @@ a{
 /* photo CSS */
 #photo-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     column-gap: 50px;
-    row-gap: 50px;
+    row-gap: 150px;
 }
 
 .photo-item{
@@ -222,7 +266,7 @@ a{
     column-gap: 30px;
     justify-content: space-between;
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding-top: 5px;
     font-weight: 300;
     font-size: 0.8rem;
@@ -268,7 +312,7 @@ a{
     display: inline-block;
     margin-top: 30px;
     border-top: 5px solid black;
-    font-weight: 600;
+    font-weight: 900;
     font-size: 3rem;
 }
 
