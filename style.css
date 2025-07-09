@@ -75,26 +75,10 @@ a{
     width: 100%;
 }
 
-/* web.html Css */
-
-#web-grid{
-    display: flex;
-    flex: 2;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
-}
-
-.web-grid-item p{
-    display: inline-block;
-    font-size: 6rem;
-}
-
 /* main-grid CSS */
 #main-grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 50px;
     row-gap: 50px;
 }
@@ -198,20 +182,6 @@ a{
     line-height: 1.2
 }
 
-/* video-flex CSS */
-#video-flex{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-item{
-    width: 100%;
-}
-
 /* music-grid CSS */
 #music-grid{
     width: 100%;
@@ -273,8 +243,8 @@ a{
     /* border-top: 5px solid black; */
 }
 
-/* 반응형 CSS */
 
+/* 반응형 CSS */
 @media (max-width : 768px) {
 #header{
     display: flex;
@@ -346,4 +316,78 @@ a{
     font-size: 1rem;
     align-items: center;
     }
+
+
+#container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.container-maintext{
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.container-subtext{
+    padding-bottom: 40px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 140%;
+}
+
+.container-slider{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    margin: 0 auto;
+    
+}
+
+.slider-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.container-slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding: 0 10px; /* 이미지 간 간격 */
+  box-sizing: border-box;
+}
+
+
+.container-main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+}
+
+.container-caption{
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+}
+
+.captionKr{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    word-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+.captionEn{
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2
+}
 }
