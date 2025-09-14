@@ -7,7 +7,6 @@ html, body{
     font-style: normal;
     max-width: 100%;    
     overflow-x: hidden;
-    cursor: crosshair;
 }
 
 ::selection {
@@ -29,38 +28,55 @@ a{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 #wrap{
     display: flex;
-    flex: 1;
-    flex-direction: column;
+    flex-direction: row;
+    column-gap: 50px;
+    /* justify-content: space-between; */
 }
 
 #header{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    padding-top: 10px;
-    border-top: 30px solid black;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+#header-logo{
+    align-items: center;
 }
 
 /* header Css*/
 
 .header-logo img{
-    width: 64px;
+    width: 128px;
 }
 
-.header-nav {
+.header-nav{
     display: flex;
-    flex-direction: row;
-    column-gap: 20px;
+    flex-direction: column;
     font-weight: 500;
-    font-size: 1.1rem;
-    align-items: center;
+}
+
+.header-nav p, .header-nav a{
+    font-weight: 700;
+    letter-spacing: -3%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    font-size: 1.875rem;
+    text-align: center;
+}
+
+.header-nav :hover{
+    background-color: #26f0bd;
 }
 
 #index-main{
@@ -75,33 +91,43 @@ a{
     width: 100%;
 }
 
+#index-main img{
+    width: 500px;
+    margin: 50px;
+}
+
 /* main-grid CSS */
+#main-contain{
+    margin: 0 auto;
+}
+
 #main-grid{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 50px;
-    row-gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: 0 auto;
 }
 
 .grid-item{
-    display: flex;
+    display: block;
+    width: 300px;
+    height: 300px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1.5px solid black;
+    align-content: center;
+    overflow: hidden;
 }
 
-.grid-item :hover{
-    opacity: 70%;
-    transition: 0.3s;
-}
-
-.grid-item img{
+.grid-item a > img{
     width: 100%;
-    padding-top: 10px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .grid-item p{
+    align-items: baseline;
     margin-top: 10px;
     font-size: 0.7rem;
     font-weight: 400;
@@ -110,6 +136,7 @@ a{
 /* container CSS */
 
 #container{
+    width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
@@ -130,9 +157,9 @@ a{
 .container-slider{
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 100%;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin: 0 auto;
     
 }
@@ -159,88 +186,63 @@ a{
 .container-main{
     display: flex;
     flex-direction: column;
-    row-gap: 100px;
+    row-gap: 60px;
 }
 
 .container-caption{
     display: flex;
-    flex-direction: row;
-    column-gap: 50px;
+    flex-direction: column;
+    row-gap: 30px;
 }
 
 .captionKr{
+    width: 50%;
     font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.1px;
-    word-spacing: 0.03em;
-    line-height: 1.2;
+    letter-spacing: -0.3px;
+    word-spacing: -0.03em;
+    line-height: 1.6;
 }
 
 .captionEn{
+    width: 50%;
     font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.2
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    word-spacing: -0.05em;
+    line-height: 1.5;
 }
 
-/* music-grid CSS */
-#music-grid{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    column-gap: 20px;
-    row-gap: 50px;
-    justify-content: center;
-    align-items: center;
-}
-
-.grid-item-music{
-    border-top: 5px solid black;
-    padding: 10px;
-}
-
-/* photo CSS */
-#photo-grid{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-    column-gap: 50px;
-    row-gap: 150px;
-}
-
-.photo-item{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.photo-item img{
-    width: 100%;
-    padding-top: 10px;
-    object-fit: contain;
-    border-top: 5px solid black;
-}
-
-.photo-item p{
-    font-size: 0.8rem;
-    font-weight: 400;
-    margin-top: 10px;
+/* introduce CSS */
+.introduce{
+    border: 1px solid black;
 }
 
 
 /* footer CSS */
 #footer{
-    display: flex;
-    flex-direction: row;
     column-gap: 30px;
-    justify-content: space-between;
     margin-top: 100px;
-    margin-bottom: 20px;
-    padding-top: 5px;
-    font-weight: 300;
-    font-size: 0.8rem;
-    /* border-top: 5px solid black; */
+    margin-bottom: 50px;
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: -0.3px;
+    line-height: 130%;
+}
+
+#footer ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+#footer li{
+    display: inline;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.copyright2 li:hover{
+    background-color: #26f0bd;
 }
 
 
@@ -249,11 +251,10 @@ a{
 #header{
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 60px;
     justify-content: center;
     align-items: center;
     margin-bottom: 60px;
-    padding-top: 5px;
     border-top: 0px solid black;
 }
 
@@ -262,12 +263,12 @@ a{
     flex-direction: column;
     row-gap: 10px;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 100px;
-    margin-bottom: 20px;
-    padding-top: 5px;
     font-size: 0.8rem;
-    border-top: 5px solid black;
+}
+
+#footer a, #footer p{
+    padding: 5px;
+    display: inline-block;
 }
 
 #web-grid{
@@ -292,6 +293,7 @@ a{
     min-height: 100vh;
     margin-left: 20px;
     margin-right: 20px;
+    margin-right: 30px;
 }
 
 #wrap{
@@ -301,13 +303,35 @@ a{
     flex-direction: column;
 }
 
-#main-grid,
-#music-grid,
-#photo-grid {
-    grid-template-columns: repeat(1, 1fr);  /* 또는 2개 */
-    column-gap: 20px;
-    row-gap: 100px;
-  }
+#main-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: 0 auto;
+}
+
+.grid-item{
+    display: block;
+    width: 300px;
+    height: 300px;
+    flex-direction: column;
+    border: 1.5px solid black;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.grid-item a > img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.grid-item p{
+    align-items: baseline;
+    margin-top: 10px;
+    font-size: 0.7rem;
+    font-weight: 400;
+}
 
 .header-nav {
     display: flex;
