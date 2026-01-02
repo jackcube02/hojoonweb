@@ -1,37 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carabiner Pattern</title>
-    <link rel="stylesheet" href="style.css">
+    <title>카라비너 패턴</title>
+    <link rel="stylesheet" href="content.css">
     <link rel="stylesheet" href="https://use.typekit.net/kqm2pwo.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> 
     <link rel="icon" type="image/png" href="data/hojoonfavi.svg"/>
-
 </head>
 <body>
     <div id="main-wrapper">
         <div id="wrap">
-        <div id="header">
-            <div class="header-logo"><a href="index.html"><img src="data/hojoon_logo2.png" alt=""></a>
+            <div id="header">
+                <div class="header-logo">
+                    <a href="index.html"><img src="data/hojoon_logo_White.svg" alt="logo"></a>
+                </div>
+                <div class="header-nav">
+                    <div class="header-nav-kr">
+                        권호준은 시각 디자인을 기반으로 영상, 사진, 음악 등 다양한 매체를 탐구하며 작업합니다. 단순히 시각적으로 보기 좋은 것을 만들어내기 보다 프로젝트 본질에 집중하여, 다양한 사람들에게 새로운 시각과 긍정적인 영향력을 전하는 것을 목표로 합니다.
+                    </div>
+                    <div class="header-nav-en">
+                        Kwon Ho Joon works across various media, including video, photography, and music, based on visual design. He focuses on the essence of each project and aims to share new perspectives and a positive influence through his work.
+                    </div>
+                    <div class="header-nav-link">
+                        <a href="https://www.instagram.com/hojoon.kwon/">@hojoon.com</a>
+                        <a href="https://www.instagram.com/hojoon.img/">@hojoon.img</a>
+                        <a href="https://soundcloud.com/stayhomeboi?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnRN5elHKWuYJ2mh-x-PhXgX_YeaSDRNe0QUl9uRJ-D4MoPBOjxcdPFDtHS9k_aem_nNjphGpQ5v3_EOegspkr0A">@stayhomeboi</a>
+                    </div>
+                </div>
             </div>
-            <div class="header-nav">
-            <a href="index.html">작업</a>
-            <a target="_blank" href="https://www.instagram.com/hojoon.img?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">사진</a>
-            <a target="_blank" href="https://soundcloud.com/stayhomeboi">음악</a>
-            </div>
-        </div>
-        <div id="container">
-            <div class="container-maintext">
+
+            <div id="container">
+                <div id="container-textBox">
+                    <div class="container-maintext">
                 <p>카라비너 패턴, 2025</p>
             </div>
             <div class="container-subtext">
                 <p>[Carabiner Pattern], 2025</p>
                 <p>Graphic Desgin</p>
             </div>
-            <div class="container-main">
+                </div>
+                
+                <div class="container-main">
                 <div class="container-slider">
                     <div class="slider-content"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045562/carabiner_1_dvbvqv.jpg" alt=""></div>
                     <div class="slider-content"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045570/carabiner_2_ali6lc.jpg" alt=""></div>
@@ -61,26 +74,30 @@
                     </div>
                 </div>
             </div>
-            <div id="footer">
-            <div class="copyright">
-                <ul>
-                    <li>ⓒ 2025. Kwon Ho Joon All rights reserved.</li>
-                    <li><a href="">sokai1018@naver.com</a></li>
-                </ul>
-            </div>
-            <div class="copyright2">
-                <ul>
-                    <li><a href="https://www.instagram.com/hojoon.kwon/">Graphic</a></li>
-                    <li><a href="https://www.instagram.com/hojoon.img/">Photograph</a></li>
-                    <li><a href="https://soundcloud.com/stayhomeboi">Soundcloud</a></li>
-                </ul>
             </div>
         </div>
+        
+        <div id="footer">
+            <video autoplay loop playsinline muted src="https://res.cloudinary.com/dcyuf1hqs/video/upload/v1766924725/HM_lineMoving_Black2_xf2s3k.mp4"></video>
         </div>
-    </div>
-    </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="scripts.js"></script>
+    </div> 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('.container-slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 1000,
+                fade: true,
+                cssEase: 'linear',
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
 </body>
 </html>

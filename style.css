@@ -1,510 +1,257 @@
-html, body{
+/* Reset & Basics */
+* {
+    box-sizing: border-box; /* 패딩과 테두리가 너비에 포함되도록 설정 */
+}
+
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "helvetica-neue-lt-pro","Pretendard", sans-serif;
+    background-color: #181818;
+    font-family: "helvetica-neue-lt-pro", "Pretendard", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    max-width: 100%;    
-    overflow-x: hidden;
+    width: 100%;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 ::selection {
-  background: black;   /* 선택 영역 배경색 */
-  color: white;        /* 선택한 텍스트 색상 */
+    background-color: #15D29C;
+    color: #181818;
 }
 
-p{
+p {
     margin: 0;
 }
 
-a{
+a {
     list-style: none;
     text-decoration: none;
-    color: black;
 }
 
-#main-wrapper{
+img, video, iframe {
+    display: block;
+    max-width: 100%;
+}
+
+/* Structure */
+#main-wrapper {
     display: flex;
     flex-direction: column;
+    row-gap: 150px;
     min-height: 100vh;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-
-#wrap{
-    display: flex;
-    flex-direction: row;
-    column-gap: 50px;
-    /* justify-content: space-between; */
-}
-
-#header{
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    align-items: center;
-}
-
-#header-logo{
-    align-items: center;
-}
-
-/* header Css*/
-
-.header-logo img{
-    width: 128px;
-}
-
-.header-nav{
-    display: flex;
-    flex-direction: column;
-    font-weight: 500;
-}
-
-.header-nav p, .header-nav a{
-    font-weight: 700;
-    letter-spacing: -3%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid black;
-    font-size: 1.875rem;
-    text-align: center;
-}
-
-.header-nav :hover{
-    background-color: #26f0bd;
-}
-
-#index-main{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-}
-
-#index-main video{
-    width: 100%;
-}
-
-#index-main img{
-    width: 500px;
-    margin: 50px;
-}
-
-/* main-grid CSS */
-#main-contain{
-    margin: 0 auto;
-}
-
-#main-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
-    row-gap: 20px;
-    margin: 0 auto;
-}
-
-.grid-item{
-    display: flex;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border: 1.5px solid black;
-    overflow: hidden;
-}
-
-.grid-item a,
-.grid-item iframe{
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.grid-item a > img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.grid-item p{
-    align-items: baseline;
-    margin-top: 10px;
-    font-size: 0.7rem;
-    font-weight: 400;
-}
-
-/* container CSS */
-
-#container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-}
-
-.container-maintext{
-    font-weight: 900;
-    font-size: 6rem;
-}
-
-.container-subtext{
-    padding-bottom: 40px;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 140%;
-}
-
-.container-slider{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    background-color: rgb(255, 255, 255);
-    margin: 0 auto;
-}
-
-.slider-content{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    padding: 0 10px;
+    padding: 50px;
     box-sizing: border-box;
 }
 
-.container-slider img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  padding: 0 10px; /* 이미지 간 간격 */
-  box-sizing: border-box;
-}
-
-
-.container-main{
-    display: flex;
-    flex-direction: column;
-    row-gap: 60px;
-}
-
-.container-caption{
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-}
-
-.captionKr{
-    width: 50%;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-    word-spacing: -0.03em;
-    line-height: 1.6;
-}
-
-.captionEn{
-    width: 50%;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: -0.2px;
-    word-spacing: -0.05em;
-    line-height: 1.5;
-}
-
-/* introduce CSS */
-.introduce{
-    border: 1px solid black;
-}
-
-
-/* footer CSS */
-#footer{
-    display: flex;
-    flex-direction: column;
-    row-gap: 25px;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: -0.3px;
-    line-height: 130%;
-}
-
-#footer ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-#footer li{
-    display: inline;
-    padding: 5px;
-    margin-right: 5px;
-    border: 2px solid black;
-}
-
-.copyright2 li:hover{
-    background-color: #26f0bd;
-}
-
-
-/* 반응형 CSS */
-@media (max-width : 768px) {
-
-/* header Css*/
-#header{
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.header-logo img{
-    width: 64px;
-}
-
-.header-nav{
-    display: flex;
-    flex-direction: column;
-    font-weight: 500;
-}
-
-.header-nav p, .header-nav a{
-    font-weight: 700;
-    letter-spacing: -3%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid black;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.header-nav :hover{
-    background-color: #26f0bd;
-}
-
-#main-contain{
-    margin: 0 auto;
-}
-
-#main-grid{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: 20px;
-    row-gap: 20px;
-    margin: 0 auto;
-}
-
-.grid-item{
-    display: flex;
+#wrap {
     width: 100%;
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    border: 2px solid black;
-    overflow: hidden;
+    display: flex;
+    flex: 10;
+    flex-direction: row;
+    column-gap: 100px;
+    align-items: flex-start; /* 컨텐츠 길이에 따라 사이드바가 늘어나지 않도록 설정 */
 }
 
-.grid-item a,
-.grid-item iframe{
+/* Header (Sidebar) */
+#header {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    row-gap: 50px;
+    align-items: flex-start; /* 왼쪽 정렬 */
+    color: #F3F3F3;
+    position: sticky; /* 스크롤 시 따라오게 하려면 top: 50px 추가 */
+    top: 50px;
+    height: fit-content;
+}
+
+.header-logo {
     width: 100%;
-    height: 100%;
-    display: block;
+    max-width: 200px; /* 로고 최대 크기 제한 */
 }
 
-.grid-item a > img{
-    display: block;
+.header-logo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.grid-item p{
-    align-items: baseline;
-    margin-top: 10px;
-    font-size: 0.7rem;
-    font-weight: 400;
-}
-
-/* footer CSS */
-#footer{
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    margin-top: 100px;
-    margin-bottom: 50px;
-    font-weight: 500;
-    font-size: 0.8rem;
-    letter-spacing: -0.3px;
-    line-height: 130%;
-}
-
-#footer ul{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-#footer li{
-    display: inline-block;
-    padding: 5px;
-    margin-bottom: 5px;
-    /* margin-right: 5px; */
-    border: 2px solid black;
-}
-
-.copyright2 li:hover{
-    background-color: #26f0bd;
-}
-
-
-
-
-#web-grid{
-    display: flex;
-    flex: 0;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
-}
-
-.web-grid-item p{
-    display: inline-block;
-    margin-top: 30px;
-    border-top: 5px solid black;
-    font-weight: 900;
-    font-size: 3rem;
-}
-
-#main-wrapper{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-#wrap{
-    margin-top: 30px;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-}
-
-#main-grid{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
-    margin: 0 auto;
-}
-
-.grid-item{
-    display: flex;
-    width: 250px;
-    height: 250px;
-    flex-direction: column;
-    border: 1.5px solid black;
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.grid-item a > img{
-    width: 100%;
-    object-fit: cover;
-}
-
-.grid-item p{
-    align-items: baseline;
-    margin-top: 10px;
-    font-size: 0.7rem;
-    font-weight: 400;
+    height: auto;
 }
 
 .header-nav {
     display: flex;
-    flex-direction: row;
-    column-gap: 20px;
+    flex-direction: column;
+    row-gap: 30px;
     font-size: 1rem;
-    align-items: center;
-    }
+}
 
+.header-nav-kr {
+    font-family: 'pretendard-Regular', sans-serif;
+    line-height: 1.5;
+    letter-spacing: -0.05px;
+    word-break: keep-all; /* 한글 단어 끊김 방지 */
+}
 
-#container{
+.header-nav-en {
+    font-family: 'inter-Regular', sans-serif;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.header-nav-link {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.container-maintext{
-    font-weight: 900;
-    font-size: 2rem;
+.header-nav-link a {
+    color: #F3F3F3;
+    transition: opacity 0.3s;
 }
 
-.container-subtext{
-    padding-bottom: 40px;
-    font-weight: 500;
-    font-size: 0.8rem;
-    line-height: 140%;
+.header-nav-link a:hover {
+    opacity: 0.7;
 }
 
-.container-slider{
-    display: flex;
-    align-items: center;
-    width: 80%;
-    padding: 20px;
-    background-color: white;
-    margin: 0 auto;
-    
-}
-
-.slider-content{
+/* Main Grid Content */
+#main-contain {
+    flex: 9;
     width: 100%;
+}
+
+#main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+    width: 100%;
+}
+
+.grid-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.grid-item {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #F3F3F3;
+    overflow: hidden;
+    position: relative;
+}
+
+.grid-item a,
+.grid-item iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect added */
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Caption Style */
+.grid-caption {
+    display: inline-block; /* inline 대신 inline-block 사용 */
+    width: fit-content;
+    padding: 5px 8px;
+    background-color: #15D29C;
+    color: #181818;
+    border: 1px solid #181818;
+    font-size: 0.9rem;
+    font-family: 'pretendard-Regular', sans-serif;
+    line-height: 1.4;
+}
+
+/* Footer */
+#footer {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 400px;
-    padding: 0 10px;
-    box-sizing: border-box;
 }
 
-.container-slider img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  padding: 0 10px; /* 이미지 간 간격 */
-  box-sizing: border-box;
+#footer video {
+    width: 30%;
+    min-width: 200px;
 }
 
+/* ==========================================================================
+   Responsive Design (Media Queries)
+   ========================================================================== */
 
-.container-main{
-    display: flex;
-    flex-direction: column;
-    row-gap: 100px;
+/* Tablet & Small Desktop (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    #main-wrapper {
+        padding: 40px;
+        row-gap: 80px;
+    }
+
+    #wrap {
+        flex-direction: column; /* 가로 배치 -> 세로 배치 */
+        row-gap: 60px;
+    }
+
+    #header {
+        width: 100%;
+        position: static; /* 스티키 해제 */
+        flex: auto;
+        align-items: flex-start;
+        row-gap: 30px;
+    }
+    
+    .header-logo {
+        max-width: 150px;
+    }
+
+    #main-grid {
+        grid-template-columns: repeat(2, 1fr); /* 3열 -> 2열 */
+    }
 }
 
-.container-caption{
-    display: flex;
-    flex-direction: column;
-    row-gap: 80px;
-}
+/* Mobile (Max Width: 768px) */
+@media (max-width: 768px) {
+    #main-wrapper {
+        padding: 20px; /* 여백 축소 */
+        row-gap: 60px;
+    }
 
-.captionKr{
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.1px;
-    word-spacing: 0.03em;
-    line-height: 1.2;
-}
+    #header {
+        align-items: center; /* 중앙 정렬 */
+        text-align: center;
+    }
 
-.captionEn{
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.2
-}
+    .header-nav {
+        width: 100%;
+    }
+
+    .header-nav-kr, 
+    .header-nav-en {
+        font-size: 0.95rem;
+    }
+
+    #main-grid {
+        grid-template-columns: 1fr; /* 2열 -> 1열 */
+        row-gap: 40px;
+    }
+
+    .grid-caption {
+        font-size: 0.85rem;
+    }
+
+    #footer video {
+        width: 60%;
+    }
 }

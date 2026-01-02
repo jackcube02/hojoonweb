@@ -1,0 +1,279 @@
+/* Reset & Fonts */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #181818;
+    font-family: "helvetica-neue-lt-pro", "Pretendard", sans-serif;
+    width: 100%;    
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: #15D29C;
+    color: #181818;
+}
+
+p { margin: 0; }
+a { text-decoration: none; }
+img, video { display: block; max-width: 100%; }
+
+/* Main Wrapper */
+#main-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 150px;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+/* Wrap: PC에서는 가로 배치 (Header | Container) */
+#wrap {
+    display: flex;
+    flex: 10;
+    flex-direction: row;
+    column-gap: 50px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* 1. Header Area */
+#header {
+    flex: 1; 
+    min-width: 250px; /* 최소 너비 확보 */
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    color: #F3F3F3;
+    position: sticky;
+    top: 50px;
+}
+
+.header-logo img {
+     width: 100%; 
+     max-width: 200px;
+    }
+
+.header-nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    font-size: 1rem;
+}
+
+.header-nav-kr {
+    font-family: 'pretendard-Regular', sans-serif;
+    line-height: 1.5;
+    letter-spacing: -0.05px;
+    word-break: keep-all;
+}
+
+.header-nav-en {
+    font-family: 'inter-Regular', sans-serif;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.header-nav-link {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.header-nav-link a { color: #F3F3F3; transition: opacity 0.3s;}
+.header-nav-link a:hover { opacity: 0.7; }
+
+/* 2. Container (Title + Main Content) */
+#container {
+    flex: 8; 
+    min-width: 0; 
+    display: flex;
+    flex-direction: row; 
+    column-gap: 50px;
+}
+
+/* 2-1. Text Box (Title) */
+#container-textBox {
+    flex: 3; 
+    min-width: 0;
+    /* position: sticky; */
+    top: 50px;
+    height: fit-content;
+}
+
+.container-maintext {
+    font-family: 'pretendard-black', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #F3F3F3;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.container-subtext {
+    font-family: 'inter-SemiBold', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #F3F3F3;
+}
+
+/* 2-2. Main Content (Slider + Description) */
+.container-main {
+    flex: 6; 
+    min-width: 0; 
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px; /* 슬라이더와 텍스트 사이 간격 */
+}
+
+/* Slider Style */
+.container-slider {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #fff; /* 이미지가 투명할 경우를 대비 */
+}
+
+.slider-content {
+    outline: none; /* 포커스 라인 제거 */
+}
+
+.slider-content img {
+    width: 100%;
+    height: auto;
+}
+
+/* Slick Dots Customizing (Optional) */
+.slick-dots li button:before {
+    color: #fff;
+}
+.slick-dots li.slick-active button:before {
+    color: #15D29C;
+}
+
+/* Captions */
+.container-caption {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    align-items: flex-start;
+}
+
+.captionKr, .captionEn {
+    width: 50%;
+    color: #F3F3F3;
+}
+
+.captionKr {
+    font-family: 'pretendard-Regular', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: -0.05px;
+    word-break: keep-all;
+}
+
+.captionEn {
+    font-family: 'inter-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+}
+
+/* Footer */
+#footer {
+    width: 100%;
+    padding-bottom: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+#footer video { width: 30%; min-width: 200px; }
+
+
+/* ==========================================================================
+   Responsive Design (Media Queries)
+   ========================================================================== */
+
+/* Tablet & Small Desktop (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    #main-wrapper {
+        padding: 40px;
+        row-gap: 80px;
+    }
+
+    /* 전체 레이아웃 세로 변경 */
+    #wrap {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+
+    #header {
+        position: static; /* 스티키 해제 */
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .header-logo { max-width: 150px; }
+
+    #container {
+        width: 100%;
+        /* 태블릿에서도 컨텐츠 영역은 아직 가로로 유지할지, 세로로 할지 결정 */
+        /* 화면이 좁아지므로 여기서부터 세로로 변경 */
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    #container-textBox {
+        position: static;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .container-main {
+        width: 100%;
+    }
+}
+
+/* Mobile (Max Width: 768px) */
+@media (max-width: 768px) {
+    #main-wrapper {
+        padding: 20px; /* 모바일 여백 축소 */
+        row-gap: 60px;
+    }
+
+    #header {
+        align-items: center; /* 헤더 중앙 정렬 */
+        text-align: center;
+    }
+
+    .header-nav {
+        width: 100%;
+    }
+
+    .header-nav-kr, .header-nav-en {
+        font-size: 0.95rem;
+    }
+
+    .container-maintext {
+        font-size: 1.8rem;
+    }
+
+    /* 캡션 세로 배치 */
+    .container-caption {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .captionKr, .captionEn {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    #footer video {
+        width: 60%;
+    }
+}
