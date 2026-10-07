@@ -1,526 +1,689 @@
-* {
+/* 기본 색상과 글꼴 */
+*{
     box-sizing: border-box;
 }
 
-html, body {
+::selection{
+    background: #07fec0;
+    color: #171717;
+}
+
+html, body{
+    width: 100%;
     height: 100%;
     margin: 0;
-    padding: 0;
-    background-color: #E8E8E8;
-    font-family: "helvetica-neue-lt-pro","mgothic-210", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-optical-sizing: auto;
-    width: 100%;
-    overflow-x: hidden;
 }
 
-::selection {
-    background-color: #070707;
-    color: #e8e8e8;
+body{
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    color: #171717;
+    background: #fff;
+    font-family: "pretendard", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 0px 10px 10px 10px;
 }
 
-p {
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+button{
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+p, h1, h2{
     margin: 0;
 }
 
-a {
-    list-style: none;
-    text-decoration: none;
-    color: #070707;
-}
-
-ul, li{
-    padding: 0;
-    list-style: none;
-}
-
-img, video, iframe {
+img{
     display: block;
     max-width: 100%;
-}
-
-/* Structure */
-#main-wrapper {
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-#wrap {
-    width: 100%;
-    display: flex;
-    flex: 10;
-    flex-direction: row;
-    column-gap: 30px;
-    align-items: flex-start;
-}
-
-
-/* Header (Sidebar) */
-#header {
-    display: flex;
-    flex: 2.5;
-    flex-direction: column;
-    row-gap: 50px;
-    align-items: flex-start;
-    color: #070707;
-    position: sticky;
-    top: 20px;
-    height: fit-content;
-}
-
-.header-logo {
-    width: 100%;
-    max-width: 200px;
-}
-
-.header-logo img {
-    width: 100%;
     height: auto;
 }
 
-/* .header-logo-text{
-    font-family: neue-haas-grotesk-display-pr, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 30px;
-    color: #070707;
-    letter-spacing: 5px;
-} */
-
-.header-line{
-    background-color: #F3F3F3;
-    width: 100%;
-    height: 4px;
-}
-
-.header-nav {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-}
-
-.header-nav-kr {
-    font-family: "mgothic-210", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    letter-spacing: -0.1px;
-    word-spacing: 0.7px;
-    /* word-break: keep-all; */
-}
-
-.header-nav-en {
-    font-family: "neue-haas-grotesk-display-pro", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 1.4;
-    word-spacing: 0.5px;
-    letter-spacing: -0.1px;
-    word-break: keep-all;
-}
-
-.header-nav-link {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-}
-
-.header-nav-link a {
-    color: #070707;
-    transition: opacity 0.3s;
-}
-
-.header-nav-link a:hover {
-    opacity: 0.7;
+:focus-visible{
+    outline: 2px solid #171717;
+    outline-offset: 4px;
 }
 
 
-/* Main Grid Content */
-#main-contain {
-    flex: 9;
-    width: 100%;
-}
-
-#main-nav ul{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    row-gap: 10px;
-    margin: 0;
-    margin-bottom: 50px;
-    align-items: right;
-    justify-content: right;
-}
-
-#main-nav a{
-    font-family: "neue-haas-grotesk-display-pro", sans-serif;
-    font-weight:400;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 1.4;
-    word-spacing: 0.5px;
-    letter-spacing: -0.1px;
-    color: #E8E8E8;
-    padding: 7px;
-    width: fit-content;
-    background-color: #070707;
-    transition: all 0.5s ease;
-}
-
-#main-nav a:hover{
-    color: rgb(0, 255, 213);
-}
-
-#main-grid {
-    /* display: grid;
-    grid-template-columns: repeat(4 , 1fr);
-    column-gap: 20px;
-    row-gap: 30px;
-    width: 100%; */
-    column-count: 4;
-    column-gap: 50px;
-    width: 100%;
-}
-
-.grid-box {
-    /* display: flex;
-    flex-direction: column;
-    width: 100%; */
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    break-inside: avoid;
-    margin-bottom: 30px;
-}
-
-.grid-item {
-    display: flex;
-    width: 100%;
-    height: auto;
+#wrap{
+    --sidebar-width: clamp(220px, 28vw, 300px);
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 14px minmax(0, 1fr);
+    min-height: 0;
     overflow: hidden;
-    position: relative;
+}
+
+#sidebar, #works, #store{
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* 상단: 로고와 메뉴는 조절선 위에서 한 줄로 이어집니다. */
+#header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
+    gap: 16px 48px;
+    border-bottom: 1px solid #000000;
 }
 
-.grid-item a,
-.grid-item iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    display: block;
+#nav{
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
-.grid-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: all 0.5s ease;
-}
-
-.grid-item:hover img {
-    transform: scale(0.5);
-}
-
-/* Caption Style */
-.grid-caption {
+#nav a{
+    font-size: 1rem;
     display: inline-block;
-    width: fit-content;
-    background-color: #070707;
-    color: #E8E8E8;
-    padding: 5px 8px 5px 8px;
-    font-family: "mgothic-210", sans-serif;
-    font-style: normal;
-    font-weight: 500;
+}
+
+#nav a[aria-current="page"]{
+    font-weight: 700;
+}
+
+/* 왼쪽: 소개, 연락처 */
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-wrap: anywhere;
+}
+
+.name{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -.04em;
+}
+
+.intro > p:last-child{
+    max-width: none;
+    word-break: keep-all;
     font-size: 0.8rem;
-    line-height: 1.7;
-    letter-spacing: -0.4px;
-    word-spacing: 0.5px;
+}
+
+.contact{
+    display: grid;
+    gap: 2px;
+    font-style: normal;
+}
+
+.contact a{
+    font-size: 0.8rem;
+    display: block;
+    width: fit-content;
+}
+
+.label{
+    color: #666;
+    font-size: 14px;
+}
+
+/* 조절선: 선은 얇게, 잡을 수 있는 영역은 넓게 */
+#divider{
+    position: relative;
+    cursor: col-resize;
+    touch-action: none;
+    user-select: none;
+    color:#000000;
+}
+
+#divider::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    width: 1px;
+    background: #171717;
+}
+
+#divider:hover::before, #divider:focus-visible::before, .dragging #divider::before{
+    width: 2px;
+    background: #171717;
+}
+
+#divider:focus-visible{
+    outline-offset: -3px;
+}
+
+.grip{
+    position: absolute;
+    top: calc(50% - 22px);
+    left: 4px;
+    width: 5px;
+    height: 100px;
+    border: 1px solid #171717;
+    border-radius: 2px;
+    background: #07fec0;
+}
+
+.dragging, .dragging *{
+    cursor: col-resize !important;
+    user-select: none !important;
+}
+
+/* 오른쪽: 작업 목록 */
+#works, #store{
+    container-type: inline-size;
+}
+
+#store h1{
+    margin-bottom: 16px;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -.04em;
+}
+
+/* HTML 순서대로 왼쪽 → 오른쪽, 다음 줄 순서로 배치합니다. */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px 20px;
+}
+
+.work{
+    width: 100%;
+    min-width: 0;
+}
+
+.work-title{
+    margin-top: 10px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    font-weight: 400;
+    overflow-wrap: anywhere;
     word-break: keep-all;
 }
 
-.horzLine {
-    height: 4px;
-    background-color: #070707;
-    align-self: stretch;
-}
-
-/* 홈 화면 수직선 */
-#vertLine{
-    width: 4px;
-    background-color: #070707;
-    align-self: stretch;
-}
-
-/* Footer */
-#footer {
+.work > img{
     width: 100%;
 }
 
-#footer a{
+.skip{
+    position: fixed;
+    top: -100px;
+    left: 16px;
+    z-index: 5;
+    background: #171717;
+    color: white;
+    padding: 10px 16px;
+}
+
+.skip:focus{
+    top: 12px;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* 실제 작업 목록: 기본 4열은 유지하고 오른쪽 너비에 맞춰 줄어듭니다. */
+.work-link{
+    display: block;
+}
+
+.work-link:hover{
+    text-decoration: none;
+}
+
+.work-link:hover .work-title{
     text-decoration: underline;
-
+    text-underline-offset: 4px;
 }
 
-#footer-list{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 10px;
-    justify-content: space-between;
-    font-family: "neue-haas-grotesk-display-pr", "mgothic-210", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    letter-spacing: 0.01px;
-    word-spacing: 0.2px;
-    color: #070707;
+.thumb{
+    width: 100%;
 }
 
-#footer-list li {
-    width: fit-content;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 3px;
+.thumb img{
+    width: 100%;
+    height: auto;
 }
 
-#footer-list li:hover {
-    background-color: #070707;
-    color: #e8e8e8;
-}
-
-#footer-list li:hover a {
-    color: #e8e8e8;
-}
-
-.en{
-    font-family: "neue-haas-grotesk-display-pr", sans-serif;
-    letter-spacing: 1px;
-}
-
-.header-logo-text a {
-    color: #F3F3F3;
-}
-
-
-/* 2. Container (Title + Main Content) */
-#container {
-    flex: 9; 
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    column-gap: 50px;
-}
-
-/* 2-1. Text Box (Title) */
-#container-textBox {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    row-gap: 15px;
-    height: fit-content;
-    margin-bottom: 30px;
-}
-
-.container-maintext {
-    font-family: "mgothic-210", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 1.618rem;
-    color: #070707;
-    letter-spacing: -0.2px;
-    color: #e8e8e8;
-    background-color: #070707;
-    padding: 7px;
-    width: fit-content;
-}
-
-.container-maintext p {
+/* 작업 상세 */
+#detail{
+    width: 100%;
+    max-width: none;
     margin: 0;
-    line-height: 1;
 }
 
-.container-subtext {
-    font-family: "neue-haas-grotesk-display-pr", "mgothic-210", sans-serif;
-    font-weight: 900;
-    letter-spacing: -0.3px;
-    font-size: 1rem;
-    color: #e8e8e8;
-    background-color: #070707;
-    padding: 7px;
-    width: fit-content;
+.detail-top{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
 }
 
-/* 2-2. Main Content (Slider + Description) */
-.container-main {
-    flex: 6; 
+.back{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+#work-title{
+    font-size: clamp(24px, 3.5cqw, 40px);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
+    font-weight: 400;
+}
+
+.about{
+    display: grid;
+    /* 스펙 길이에 맞추되, 설명 공간을 위해 최대 35%까지만 사용합니다. */
+    grid-template-columns: fit-content(35%) minmax(0, 1fr);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
+}
+
+.info{
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
+    display: grid;
+    align-content: start;
+    gap: 5px;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+    padding-right: 10px;
+    word-break: keep-all;
 }
 
-.container-credit{
-    font-family: "neue-haas-grotesk-display-pr", "mgothic-210", sans-serif;
-    font-weight: 900;
-    letter-spacing: -0.3px;
-    font-size: 1rem;
-    color: #e8e8e8;
-    background-color: #070707;
-    padding: 7px;
+.info:empty{
+    display: none;
+}
+
+/* 정보와 설명 사이의 구분선, 한글·영문 두 열 */
+.description{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px;
+    min-width: 0;
+    border-left: 1px solid #000;
+    padding-left: 10px;
+}
+
+.text{
+    min-width: 0;
+    line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.text[lang="en"]{
+    color: #171717;
+    word-break: normal;
+    line-height: 1.35;
+}
+
+.text a{
+    color: blue;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.info a{
+    color: blue;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.source{
     width: fit-content;
 }
 
-.container-credit a{
-    color: #e8e8e8;
-    transition: all 0.5s ease;
-}
-
-.container-credit a:hover{
-    color: rgb(0, 255, 213);
-}
-
-/* Slider Style */
-.container-slider {
+.gallery{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: #070707;
-    margin: 0 auto;
-    overflow: hidden;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+
+}
+
+/* 이미지 또는 영상이 하나뿐이면 전체 너비의 한 열로 표시합니다. */
+.gallery:has(> :only-child){
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.image{
+    display: block;
+    min-width: 0;
+    background: #f3f3f3;
+}
+
+.image img{
     width: 100%;
-    margin-bottom: 30px;
+    height: auto;
 }
 
-.slider-content {
-    outline: none;
+.image-error{
+    display: block;
+    padding: 24px 12px;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
 }
 
-.slider-content img {
+.film{
+    aspect-ratio: 16 / 9;
     width: 100%;
+    background: #171717;
 }
 
-.slick-dots li button:before {
-    color: #fff;
-}
-.slick-dots li.slick-active button:before {
-    color: #15D29C;
-}
-
-/* Captions */
-.container-caption{
+.film iframe{
+    display: block;
     width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* 반응형 */
+
+@container (max-width: 900px){
+    .grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@container (max-width: 680px){
+    .grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about{
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .description{
+        border-left: 0;
+        padding-left: 0;
+        border-top: 1px solid #000;
+        padding-top: 10px;
+    }
+}
+
+@container (max-width: 400px){
+    .grid{
+        grid-template-columns: 1fr;
+    }
+
+    #detail{
+        padding: 6px 0 20px;
+    }
+
+    .description{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+#works [hidden], #store [hidden]{
+    display: none !important;
+}
+
+/* 제작 연도 스티커 — 검정 배경 설정은 유지합니다. */
+.tags{
     display: flex;
-    flex-direction: row;
-    column-gap: 30px;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
 }
 
-.captionKr, .captionEn {
-    width: 40%;
-    color: #070707;
+.tag{
+    display: inline-block;
+    padding: 2px 5px;
+    background: #181818;
+    color: #efefef;
+    font-size: 12px;
+    line-height: 1.5;
+}   
+
+/* 사이트 링크 세 개와 이메일 사이에 한 줄 정도 여백을 둡니다. */
+.contact .email{
+    margin-top: 1em;
 }
 
-.captionKr a, .captionEn a {
+/* 소개 아래 소식 목록 */
+.sidebar-top{
+    flex-shrink: 0;
+}
+
+#sidebar > .contact{
+    flex-shrink: 0;
+    padding-top: 32px;
+}
+
+#news{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #171717;
+}
+
+#news-label{
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#news-list{
+    display: grid;
+    gap: 14px;
+}
+
+.news-link{
+    display: grid;
+    gap: 2px;
+}
+
+.news-date{
+    font-size: 12px;
+    color: #666;
+}
+
+.news-link[aria-current="page"] .news-title{
     text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
-.captionKr {
-    font-family: "mgothic-210", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    letter-spacing: -0.1px;
-    word-spacing: 0.7px;
-    /* word-break: keep-all; */
-}
-
-.captionEn {
-    font-family: "neue-haas-grotesk-display-pro", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 1.4;
-    word-spacing: 0.5px;
-    letter-spacing: -0.1px;
+/* 소식 본문도 오른쪽 영역의 전체 너비를 사용합니다. */
+.news-body{
+    display: grid;
+    gap: 20px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
     word-break: keep-all;
 }
 
-/* =========================================
-   Responsive Design (Tablet & Mobile)
-   ========================================= */
+.news-body img{
+    width: 100%;
+}
 
-@media screen and (max-width: 1024px) {
-    /* 좌우 2단 배열을 상하 세로 배열로 변경 */
-    #wrap {
+.news-body a{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* 데스크탑 연락처는 기존 사이드바에 유지합니다. */
+#footer{
+    display: none;
+}
+
+/* 모바일: 헤더 → 소식 → 작업 → 연락처. 페이지 전체를 세로로 스크롤합니다. */
+@media (max-width: 768px){
+    html, body{
+        height: auto;
+        min-height: 100%;
+    }
+
+    body{
+        display: flex;
         flex-direction: column;
-        row-gap: 40px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: visible;
+        padding: 0 12px;
     }
 
-    #header {
-        position: static; /* 스크롤 시 위로 같이 올라가도록 설정 */
-        width: 100%;
-        flex: none;
+    #header{
+        flex-shrink: 0;
+        gap: 8px 16px;
+        margin-bottom: 0;
+        padding: 8px 0;
     }
 
-    #vertLine {
+    .name{
+        font-size: 24px;
+    }
+
+    #nav{
+        gap: 16px;
+    }
+
+    #nav a{
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        font-size: 14px;
+    }
+
+    #wrap{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    #sidebar, #works, #store{
+        overflow: visible;
+        overscroll-behavior: auto;
+    }
+
+    #sidebar{
+        display: block;
+    }
+
+    .intro, #divider, #resize-help{
         display: none;
     }
 
-    #main-contain {
-        flex: none;
-        width: 100%;
+    #news{
+        margin-top: 0;
+        padding: 8px 0;
+        border-top: 0;
+        border-bottom: 1px solid #171717;
     }
 
-    #main-grid {
-        column-count: 2;
-        column-gap: 20px;
+    #news-list{
+        gap: 12px;
     }
 
-    .container-caption {
-        flex-direction: column;
-        row-gap: 20px;
+    .news-link{
+        min-height: 44px;
     }
-    .captionKr, .captionEn {
-        width: 100%;
-        flex: none;
+
+    .news-title{
+        font-size: 14px;
+    }
+
+    #works, #store{
+        flex: 1;
+    }
+
+    .grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+        padding: 10px 0px 10px 0;
+    }
+
+    #detail{
+        padding: 0;
+    }
+
+    .back{
+        min-width: 44px;
+        min-height: 44px;
+        justify-content: flex-start;
+    }
+
+    #work-title{
+        font-size: 26px;
+    }
+
+    .about{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .info{
+        padding-right: 0;
+    }
+
+    .description{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        border-left: 0;
+        border-top: 1px solid #171717;
+        padding-left: 0;
+        padding-top: 8px;
+    }
+
+    .gallery{
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #footer{
+        display: block;
+        padding: 10px 0 10px;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        border-top: 1px solid #171717;
+    }
+
+    #footer .contact{
+        gap: 0;
+    }
+
+    #footer .contact a{
+        display: flex;
+        align-items: center;
+        min-height: 24px;
+        font-size: 14px;
     }
 }
-
-@media screen and (max-width: 768px) {
-    /* 모바일에서는 여백을 조금 더 타이트하게 조정 */
-    #main-wrapper {
-        padding: 15px;
-    }
-
-    #header {
-        row-gap: 30px;
-    }
-
-    .header-nav-kr, .header-nav-en {
-        font-size: 0.85rem;
-    }
-
-    #main-grid {
-        column-count: 1;
-    }
-
-    #footer-list {
-        flex-direction: column;
-        row-gap: 15px;
-    }
-    
-    #main-nav ul {
-        margin-bottom: 30px;
-        justify-content: flex-start; /* 모바일에서는 좌측 정렬이 읽기 편함 */
-    }
-}   

@@ -1,108 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N9MX9H6XV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4N9MX9H6XV');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>spreadseoul</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-    <link rel="icon" type="image/svg+xml" href="data/sp_favicon_rec.svg"/>
-    <script>
+    <title>Store — spreadseoul</title>
+    <link rel="stylesheet" href="style.css?v=10">
+    <script src="script.js?v=5" defer></script>
+    <script src="works.js?v=4" defer></script>
+</head>
+<body>
+    <a class="skip" href="#store">스토어로 바로 가기</a>
+    <!-- 화면 전체 너비를 사용하는 상단 헤더 -->
+    <header id="header">
+        <p class="name"><a href="index.html" aria-label="스프레드서울 홈">spreadseoul</a></p>
+        <nav id="nav" aria-label="주 메뉴">
+            <a href="index.html">works</a>
+            <a href="store.html" aria-current="page">store</a>
+        </nav>
+    </header>
+    <div id="wrap">
+        <aside id="sidebar" aria-label="스프레드서울 소개">
+            <div class="sidebar-top">
+                <div class="intro">
+                    <p>스프레드서울은 권호준이 운영하는 그래픽/다매체 스튜디오로 주로 시각과 관련한 결과물들을 제작합니다. 확산, 전파를 의미하는 스프레드는 제작한 시각결과물로 세상에 더 나은 가치를 확산하고 전파하는 것을 목표합니다.
+                    <br><br>
+                    권호준은 시각 디자인을 기반으로 영상, 사진, 음악 등 다양한 매체를 활용한 작업을 시도합니다. 프로젝트 본질에 집중하여 어떻게 하면 다양한 사람들에게 새로운 시각과 긍정적 영향을 전달할 수 있을지 고민합니다.</p>
+                </div>
+                <section id="news" aria-label="소식">
+                    <div id="news-list" aria-live="polite">소식을 불러오는 중입니다.</div>
+                </section>
+            </div>
+            <address class="contact">
+                <a href="https://www.instagram.com/spreadseoul/" target="_blank" rel="noopener noreferrer">@spreadseoul ↗</a>
+                <a href="https://www.youtube.com/@tekhagi" target="_blank" rel="noopener noreferrer">Tekhagi ↗</a>
+                <a href="https://hojoonnow.dothome.co.kr/" target="_blank" rel="noopener noreferrer">wikiwikiwiki ↗</a>
+                <a class="email" href="mailto:sp1@spreadseoul.com">sp1@spreadseoul.com</a>
+            </address>
+        </aside>
+
+        <!-- 마우스·터치로 드래그하거나 방향키로 너비를 조절합니다. -->
+        <div id="divider" role="separator" tabindex="0" aria-label="소개 영역 너비" aria-orientation="vertical" aria-controls="sidebar" aria-valuemin="0" aria-valuemax="60" aria-valuenow="28" aria-describedby="resize-help">
+            <span class="grip" aria-hidden="true"></span>
+        </div>
+        <p id="resize-help" class="sr-only">좌우 방향키로 너비 조절. Home은 최소 너비, End는 최대 너비로 조절합니다.</p>
+        <main id="store" tabindex="-1">
+            <section id="list" aria-label="스토어"></section>
+            <article id="detail" hidden aria-labelledby="work-title"></article>
+        </main>
+        <!-- 모바일에서는 기존 연락처를 이 푸터로 이동합니다. -->
+        <footer id="footer" aria-label="연락처"></footer>
+    </div>
+<script>
   (function(d) {
     var config = {
-      kitId: 'ggd1nxg',
+      kitId: 'oxu3gcj',
       scriptTimeout: 3000,
       async: true
     },
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
 </script>
-</head>
-<body>
-    <div id="main-wrapper">
-        <div id="wrap">
-            <div id="header">
-                <div class="header-logo">
-                    <a href="index.html"><img src="data/sp_logoBlack.png" alt="Kwon Ho Joon Logo"></a>
-                </div>
-                <div class="header-nav">
-                    <div class="header-nav-kr">
-                        스프레드서울은 권호준이 운영하는 그래픽/다매체 스튜디오로 주로 시각과 관련한 결과물들을 제작합니다. 확산, 전파를 의미하는 스프레드는 제작한 시각결과물로 세상에 더 나은 가치를 확산하고 전파하는 것을 목표합니다.
-                        </div>
-                        <br>
-                        <div class="header-nav-kr">
-                            권호준은 시각 디자인을 기반으로 영상, 사진, 음악 등 다양한 매체를 활용한 작업을 시도합니다. 프로젝트 본질에 집중하여 어떻게 하면 다양한 사람들에게 새로운 시각과 긍정적 영향을 전달할 수 있을지 고민합니다.
-                        </div>
-                        <br>
-                        <div class="horzLine"></div>
-                        <br>
-                        <div class="header-nav-en">
-                            Spreadseoul is a graphic and multi-media studio run by Kwon Hojoon, primarily producing visual-related outputs. Spread, which means diffusion and dissemination, aims to spread and disseminate better values to the world through the visual works it creates.
-                        </div>
-                        <br>
-                        <div class="header-nav-en">
-                            Kwon Ho Joon attempts work utilizing various media such as video, photography, and music, based on visual design. By focusing on the essence of the project, he ponders how he can deliver new perspectives and positive influence to various people.
-                        </div>
-                </div>
-            </div>
-            <div id="vertLine"></div>
-            <div id="main-contain">
-                <div id="main-nav">
-                    <ul>
-                        <li><a href="index.html">works</a></li>
-                        <li><a href="store.html">store</a></li>
-                    </ul>
-                </div>
-                <!-- <div>
-                    <p style="font-family: mgothic-210;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 5rem;
-                        line-height: 1.7;
-                        letter-spacing: -0.1px;
-                        word-spacing: 0.7px;">곧 오픈 될 예정입니다.</p>
-                </div> -->
-            </div>
-        </div>
-        
-        <!-- [수정 1] id="horzLine" -> class="horzLine" 으로 변경 (id 중복 제거) -->
-        <div class="horzLine"></div>
-        <div id="footer">
-            <div id="footer-list">
-                <ul>
-                    <li><a href="mailto:sp1@spreadseoul.com">sp1@spreadseoul.com</a></li>
-                    <li><a href="https://www.instagram.com/spreadseoul/">@spreadseoul</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://hojoonnow.dothome.co.kr/" target="_blank">권호준은 현재...</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://www.youtube.com/@tekhagi" target="_blank">tekhagi youtube</a></li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="https://www.youtube.com/@KwonHoJoon">spreadseoul youtube</a>
-                    </li>
-                </ul>
-            </div>
-            <ul></ul>
-        </div>
-    </div>
-    <script>
-            const textElements = document.querySelectorAll('.header-nav-kr, .captionKr, .container-maintext, .container-subtext, .grid-caption');
-
-            textElements.forEach(el => {
-            el.innerHTML = el.innerHTML.replace(/(?![^<]*>)([a-zA-Z0-9]+)/g, '<span class="en">$1</span>');
-        });
-    </script>
-    
 </body>
 </html>

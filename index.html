@@ -1,355 +1,327 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N9MX9H6XV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4N9MX9H6XV');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>spreadseoul</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-    <link rel="icon" type="image/svg+xml" href="data/sp_favicon_rec.svg"/>
-    <script>
+    <link rel="stylesheet" href="style.css?v=10">
+    <script src="script.js?v=5" defer></script>
+    <script src="works-data.js" defer></script>
+    <script src="works.js?v=4" defer></script>
+    <link rel='icon' href='data/img/spreadseoul_favi2.png'/>
+</head>
+<body>
+    <a class="skip" href="#works">작업으로 바로 가기</a>
+    <!-- 화면 전체 너비를 사용하는 상단 헤더 -->
+    <header id="header">
+        <p class="name"><a href="index.html" aria-label="스프레드서울 홈">spreadseoul</a></p>
+        <nav id="nav" aria-label="주 메뉴">
+            <a href="index.html" aria-current="page">works</a>
+            <a href="store.html">store</a>
+        </nav>
+    </header>
+    <!-- 헤더 아래: 소개 / 조절선 / 작업 -->
+    <div id="wrap">
+        <aside id="sidebar" aria-label="스프레드서울 소개">
+            <div class="sidebar-top">
+                <div class="intro">
+                    <p>스프레드서울은 권호준이 운영하는 그래픽/다매체 스튜디오로 주로 시각과 관련한 결과물들을 제작합니다. 확산, 전파를 의미하는 스프레드는 제작한 시각결과물로 세상에 더 나은 가치를 확산하고 전파하는 것을 목표합니다.
+                    <br><br>
+                    권호준은 시각 디자인을 기반으로 영상, 사진, 음악 등 다양한 매체를 활용한 작업을 시도합니다. 프로젝트 본질에 집중하여 어떻게 하면 다양한 사람들에게 새로운 시각과 긍정적 영향을 전달할 수 있을지 고민합니다.</p>
+                </div>
+                <section id="news" aria-label="소식">
+                    <!-- 목록과 본문은 news.html에서 함께 수정합니다. -->
+                    <div id="news-list" aria-live="polite">소식을 불러오는 중입니다.</div>
+                </section>
+            </div>
+            <address class="contact">
+                <a href="https://www.instagram.com/spreadseoul/" target="_blank" rel="noopener noreferrer">@spreadseoul ↗</a>
+                <a href="https://www.youtube.com/@tekhagi" target="_blank" rel="noopener noreferrer">Tekhagi ↗</a>
+                <a href="https://hojoonnow.dothome.co.kr/" target="_blank" rel="noopener noreferrer">wikiwikiwiki ↗</a>
+                <a class="email" href="mailto:sp1@spreadseoul.com">sp1@spreadseoul.com</a>
+            </address>
+        </aside>
+
+        <!-- 마우스·터치로 드래그하거나 방향키로 너비를 조절합니다. -->
+        <div id="divider" role="separator" tabindex="0" aria-label="소개 영역 너비" aria-orientation="vertical" aria-controls="sidebar" aria-valuemin="0" aria-valuemax="60" aria-valuenow="28" aria-describedby="resize-help">
+            <span class="grip" aria-hidden="true"></span>
+        </div>
+        <p id="resize-help" class="sr-only">좌우 방향키로 너비 조절. Home은 최소 너비, End는 최대 너비로 조절합니다.</p>
+
+        <main id="works" tabindex="-1">
+            <section id="list" aria-label="전체 작업">
+                <h1 class="sr-only">Works</h1>
+                <div class="grid">
+                <article class="work">
+                    <a href="#work/work-01" class="work-link" data-work="work-01">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/k96boRz1Y3Y/hqdefault.jpg" alt="《영원한 것은 없으므로》 — 사라져가는 장승을 찾아서" loading="lazy" decoding="async"></div>
+                        <p class="work-title">《영원한 것은 없으므로》 — 사라져가는 장승을 찾아서</p>
+                        <div class="tags">
+                            <span class="tag year">2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/nasibo" class="work-link" data-work="nasibo">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1785602149/%E1%84%82%E1%85%A1%E1%84%89%E1%85%B5%E1%84%87%E1%85%A9-%E1%84%83%E1%85%A1%E1%84%89%E1%85%A5%E1%86%BA%E1%84%80%E1%85%AF%E1%86%AB_%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5_%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC_pzvxmx.png" alt="나는 시시하게 보고 지나쳤다" loading="lazy" decoding="async"></div>
+                        <p class="work-title">나는 시시하게 보고 지나쳤다</p>
+                        <div class="tags">
+                            <span class="tag year">2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/incunabula" class="work-link" data-work="incunabula">
+                        <div class="thumb"><img src="data/works/incunabula.gif" alt="인큐나뷸라 (Incunabula)" loading="lazy" decoding="async"></div>
+                        <p class="work-title">인큐나뷸라 (Incunabula)</p>
+                        <div class="tags">
+                            <span class="tag year">2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-04" class="work-link" data-work="work-04">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/E-BcjEtMOLo/hqdefault.jpg" alt="Dr. Strangelove - Title Sequence" loading="lazy" decoding="async"></div>
+                        <p class="work-title">Dr. Strangelove - Title Sequence</p>
+                        <div class="tags">
+                            <span class="tag year">2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/jangseungBook1" class="work-link" data-work="jangseungBook1">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778465169/jangseungTalk_front_web_qqxyo1.jpg" alt="장승대화: 엄미리편" loading="lazy" decoding="async"></div>
+                        <p class="work-title">장승대화: 엄미리편</p>
+                        <div class="tags">
+                            <span class="tag year">2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/millie-poster" class="work-link" data-work="millie-poster">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778642740/milliePoster_A3_Final_h1ycuh.jpg" alt="계원예술대학교 도서관 밀리의 서재 구독신청 안내 포스터" loading="lazy" decoding="async"></div>
+                        <p class="work-title">계원예술대학교 도서관 밀리의 서재 구독신청 안내 포스터</p>
+                        <div class="tags">
+                            <span class="tag year">2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/cargoIden" class="work-link" data-work="cargoIden">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778589407/cargoIden_1_o3jzdo.jpg" alt="카고자동차" loading="lazy" decoding="async"></div>
+                        <p class="work-title">카고자동차</p>
+                        <div class="tags">
+                            <span class="tag year">2026</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/yongsanMap" class="work-link" data-work="yongsanMap">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778723032/YongsnasMap_Tumb_gien5t.png" alt="용산전자상가 지도" loading="lazy" decoding="async"></div>
+                        <p class="work-title">용산전자상가 지도</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/ikea1980" class="work-link" data-work="ikea1980">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778640461/ikea-1980_thumb_2_rptmnt.jpg" alt="이케아 가구 이야기 - 1980년" loading="lazy" decoding="async"></div>
+                        <p class="work-title">이케아 가구 이야기 - 1980년</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-10" class="work-link" data-work="work-10">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/tYnfxkgHFds/hqdefault.jpg" alt="Machine Man" loading="lazy" decoding="async"></div>
+                        <p class="work-title">Machine Man</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/songBooklet2" class="work-link" data-work="songBooklet2">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778645063/songBooklet_websns__xtdhtb.jpg" alt="태양은 밤에도 빛난다" loading="lazy" decoding="async"></div>
+                        <p class="work-title">태양은 밤에도 빛난다</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-12" class="work-link" data-work="work-12">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/YAG0tLQc2Xo/hqdefault.jpg" alt="[LOGIN - stayhomeboi] 비주얼라이저" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[LOGIN - stayhomeboi] 비주얼라이저</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-13" class="work-link" data-work="work-13">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1757578704/LoginBody_MainCover_ghykiz.jpg" alt="[LOGIN - stayhomeboi], 앨범 커버" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[LOGIN - stayhomeboi], 앨범 커버</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-14" class="work-link" data-work="work-14">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045544/eiffel-tower-cover_ver2_sqptdw.jpg" alt="[Effeiel Tower / 4 SEASONS - stayhomeboi], 앨범 커버" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[Effeiel Tower / 4 SEASONS - stayhomeboi], 앨범 커버</p>
+                        <!-- 제작 연도는 아래 글자를 직접 수정하세요. -->
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-15" class="work-link" data-work="work-15">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045588/Homiside_cover2_250608_yymlhj.jpg" alt="[HOMISIDE - stayhomeboi], 앨범 커버" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[HOMISIDE - stayhomeboi], 앨범 커버</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-16" class="work-link" data-work="work-16">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045251/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-07-09_16.13.57_vcav2i.png" alt="HMPM | 한글마당 포스터 메이커" loading="lazy" decoding="async"></div>
+                        <p class="work-title">HMPM | 한글마당 포스터 메이커</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-17" class="work-link" data-work="work-17">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/jytC6GsfsxY/hqdefault.jpg" alt="[LOGIN] Teaser - stayhomeboi" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[LOGIN] Teaser - stayhomeboi</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/graphic-rts2" class="work-link" data-work="graphic-rts2">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778649341/RTS_1_gcz6gs.jpg" alt="거리 다시보기" loading="lazy" decoding="async"></div>
+                        <p class="work-title">거리 다시보기</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-19" class="work-link" data-work="work-19">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752046399/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-07-09_16.33.01_g3a17p.png" alt="My Essential" loading="lazy" decoding="async"></div>
+                        <p class="work-title">My Essential</p>
+                        <div class="tags">
+                            <span class="tag year">2025</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-20" class="work-link" data-work="work-20">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/Bx0oT_tE2LU/hqdefault.jpg" alt="[MAXIMUM - stayhomeboi], 비주얼라이저" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[MAXIMUM - stayhomeboi], 비주얼라이저</p>
+                        <div class="tags">
+                            <span class="tag year">2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-21" class="work-link" data-work="work-21">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045601/maximum_cardbox_rutveh.jpg" alt="[MAXIMUM - stayhomeboi]앨범 커버" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[MAXIMUM - stayhomeboi]앨범 커버</p>
+                        <div class="tags">
+                            <span class="tag year">2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-22" class="work-link" data-work="work-22">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/_8a-avqvDvI/hqdefault.jpg" alt="[HEADLESS - stayhomeboi], 비주얼라이저" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[HEADLESS - stayhomeboi], 비주얼라이저</p>
+                        <div class="tags">
+                            <span class="tag year">2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-23" class="work-link" data-work="work-23">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045581/headless_cardbox_pupnoh.jpg" alt="[HEADLESS - stayhomeboi], 앨범 커버" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[HEADLESS - stayhomeboi], 앨범 커버</p>
+                        <div class="tags">
+                            <span class="tag year">2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-25" class="work-link" data-work="work-25">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/f44bf0Qmw7c/hqdefault.jpg" alt="비소적 (雨小寂, Silent Rain)" loading="lazy" decoding="async"></div>
+                        <p class="work-title">비소적 (雨小寂, Silent Rain)</p>
+                        <div class="tags">
+                            <span class="tag year">2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/silhouebet" class="work-link" data-work="silhouebet">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752055198/Silhouebet_instaPost_c5ex2o.jpg" alt="실루벳(Silhouebet)" loading="lazy" decoding="async"></div>
+                        <p class="work-title">실루벳(Silhouebet)</p>
+                        <div class="tags">
+                            <span class="tag year">2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/hangulmadang" class="work-link" data-work="hangulmadang">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752055632/HgMadang_InstaPost_wehf6n.jpg" alt="한글마당(Hangul Madang)" loading="lazy" decoding="async"></div>
+                        <p class="work-title">한글마당(Hangul Madang)</p>
+                        <div class="tags">
+                            <span class="tag year">2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-28" class="work-link" data-work="work-28">
+                        <div class="thumb"><img src="https://i.ytimg.com/vi/5hckTWCoUXc/hqdefault.jpg" alt="노련한 인공지능에 질문하다(Asking To Ai).송승후, 권호준" loading="lazy" decoding="async"></div>
+                        <p class="work-title">노련한 인공지능에 질문하다(Asking To Ai). 송승후, 권호준.</p>
+                        <div class="tags">
+                            <span class="tag year">2021, 2024</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="work">
+                    <a href="#work/work-29" class="work-link" data-work="work-29">
+                        <div class="thumb"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1759070310/FALL_Album_Cover_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%87%E1%85%A5%E1%84%8C%E1%85%A5%E1%86%AB_apdddg.jpg" alt="[FALL - stayhomeboi]" loading="lazy" decoding="async"></div>
+                        <p class="work-title">[FALL - stayhomeboi]</p>
+                        <div class="tags">
+                            <span class="tag year">2021</span>
+                        </div>
+                    </a>
+                </article>
+                </div>
+            </section>
+            <article id="detail" hidden aria-labelledby="work-title"></article>
+            <noscript><p>작업 상세를 보려면 브라우저에서 JavaScript를 허용해 주세요.</p></noscript>
+        </main>
+        <!-- 모바일에서는 기존 연락처를 이 푸터로 이동합니다. -->
+        <footer id="footer" aria-label="연락처"></footer>
+    </div>
+<script>
   (function(d) {
     var config = {
-      kitId: 'ggd1nxg',
+      kitId: 'oxu3gcj',
       scriptTimeout: 3000,
       async: true
     },
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
 </script>
-</head>
-<body>
-    <div id="main-wrapper">
-        <div id="wrap">
-            <div id="header">
-                <div class="header-logo">
-                    <a href="index.html"><img src="data/sp_logoBlack.png" alt="Kwon Ho Joon Logo"></a>
-                </div>
-                <div class="header-nav">
-                    <div class="header-nav-kr">
-                        스프레드서울은 권호준이 운영하는 그래픽/다매체 스튜디오로 주로 시각과 관련한 결과물들을 제작합니다. 확산, 전파를 의미하는 스프레드는 제작한 시각결과물로 세상에 더 나은 가치를 확산하고 전파하는 것을 목표합니다.
-                        </div>
-                        <br>
-                        <div class="header-nav-kr">
-                            권호준은 시각 디자인을 기반으로 영상, 사진, 음악 등 다양한 매체를 활용한 작업을 시도합니다. 프로젝트 본질에 집중하여 어떻게 하면 다양한 사람들에게 새로운 시각과 긍정적 영향을 전달할 수 있을지 고민합니다.
-                        </div>
-                        <br>
-                        <div class="horzLine"></div>
-                        <br>
-                        <div class="header-nav-en">
-                            Spreadseoul is a graphic and multi-media studio run by Kwon Hojoon, primarily producing visual-related outputs. Spread, which means diffusion and dissemination, aims to spread and disseminate better values to the world through the visual works it creates.
-                        </div>
-                        <br>
-                        <div class="header-nav-en">
-                            Kwon Ho Joon attempts work utilizing various media such as video, photography, and music, based on visual design. By focusing on the essence of the project, he ponders how he can deliver new perspectives and positive influence to various people.
-                        </div>
-                </div>
-            </div>
-            <div id="vertLine"></div>
-            <div id="main-contain">
-                <div id="main-nav">
-                    <ul>
-                        <li><a href="index.html">works</a></li>
-                        <li><a href="store.html">store</a></li>
-                    </ul>
-                </div>
-                <div id="main-grid">
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/k96boRz1Y3Y?si=PNNXCYZ10hO8LOda" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            《영원한 것은 없으므로》 — 사라져가는 장승을 찾아서
-                        </div>
-                    </div>
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="nasibo.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1785602149/%E1%84%82%E1%85%A1%E1%84%89%E1%85%B5%E1%84%87%E1%85%A9-%E1%84%83%E1%85%A1%E1%84%89%E1%85%A5%E1%86%BA%E1%84%80%E1%85%AF%E1%86%AB_%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5_%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC_pzvxmx.png" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            나는 시시하게 보고 지나쳤다
-                        </div>
-                    </div>
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="incunabula.html"><img src="data/incunabula.gif" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            인큐나뷸라 (Incunabula)
-                        </div>
-                    </div>
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe width="560" height="500" src="https://www.youtube.com/embed/E-BcjEtMOLo?si=Uti7z6utAEEYPCX3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            Dr. Strangelove - Title Sequence
-                        </div>
-                    </div>
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="jangseungBook1.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778465169/jangseungTalk_front_web_qqxyo1.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            장승대화: 엄미리편
-                        </div>
-                    </div>
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="millie-poster.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778642740/milliePoster_A3_Final_h1ycuh.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            계원예술대학교 도서관 밀리의 서재 구독신청 안내 포스터
-                        </div>
-                    </div>
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="cargoIden.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778589407/cargoIden_1_o3jzdo.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            카고자동차
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="yongsanMap.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778723032/YongsnasMap_Tumb_gien5t.png" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            용산전자상가 지도
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="ikea1980.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778640461/ikea-1980_thumb_2_rptmnt.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            이케아 가구 이야기 - 1980년
-                        </div>
-                    </div>
-                    
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe src="https://www.youtube.com/embed/tYnfxkgHFds?si=ALWsdPD1MfoDh4WM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            Machine Man
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="songBooklet2.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778645063/songBooklet_websns__xtdhtb.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            태양은 밤에도 빛난다
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe src="https://www.youtube.com/embed/YAG0tLQc2Xo?si=CIgLkxJdplfpq07S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            [LOGIN - stayhomeboi] 비주얼라이저
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://soundcloud.com/stayhomeboi/sets/login" target="_blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1757578704/LoginBody_MainCover_ghykiz.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            [LOGIN - stayhomeboi], 앨범 커버
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://soundcloud.com/stayhomeboi/sets/effeiel-tower-4-seasons?si=160c89d1f4754a26ab6918ed40db6e51&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045544/eiffel-tower-cover_ver2_sqptdw.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            [Effeiel Tower / 4 SEASONS - stayhomeboi], 앨범 커버
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://soundcloud.com/stayhomeboi/sets/homiside" target="_blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045588/Homiside_cover2_250608_yymlhj.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            [HOMISIDE - stayhomeboi], 앨범 커버
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://jackcube02.github.io/HG-PosterMaker/" target="_blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045251/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-07-09_16.13.57_vcav2i.png" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            HMPM | 한글마당 포스터 메이커
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe src="https://www.youtube.com/embed/jytC6GsfsxY?si=6f_Hf_q7mSaaQVgN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            [LOGIN] Teaser - stayhomeboi
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="graphic-rts2.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778649341/RTS_1_gcz6gs.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            거리 다시보기
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://myessential5.github.io/myessential/" target="_blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752046399/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-07-09_16.33.01_g3a17p.png" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            My Essential
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe src="https://www.youtube.com/embed/Bx0oT_tE2LU?si=Lum21BiXeFa4FLoA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            [MAXIMUM - stayhomeboi], 비주얼라이저
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://soundcloud.com/stayhomeboi/sets/maximum" target="_blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045601/maximum_cardbox_rutveh.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            [MAXIMUM - stayhomeboi]앨범 커버
-                        </div>
-                    </div>
-
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_8a-avqvDvI?si=9IcJjwiCN1FIs2vw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            [HEADLESS - stayhomeboi], 비주얼라이저
-                        </div>
-                    </div>
-        
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://soundcloud.com/stayhomeboi/sets/headless" target="blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045581/headless_cardbox_pupnoh.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            [HEADLESS - stayhomeboi], 앨범 커버
-                        </div>
-                    </div>
-        
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://www.instagram.com/p/DLKM19HRVP-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752045604/notosansposter_t0itkv.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            본고딕과 본명조 서체 포스터
-                        </div>
-                    </div>
-        
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/f44bf0Qmw7c?si=Uc_IXAUSw4jRLS6t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyoscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            비소적 (雨小寂, Silent Rain)
-                        </div>
-                    </div>
-        
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="silhouebet.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752055198/Silhouebet_instaPost_c5ex2o.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            실루벳(Silhouebet)
-                        </div>
-                    </div>
-        
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="hangulmadang.html"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1752055632/HgMadang_InstaPost_wehf6n.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            한글마당(Hangul Madang)
-                        </div>
-                    </div>
-        
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5hckTWCoUXc?si=gkW-06lTjtW32D4T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                        <div class="grid-caption">
-                            노련한 인공지능에 질문하다(Asking To Ai).송승후, 권호준
-                        </div>
-                    </div>
-        
-                    <div class="grid-box">
-                        <div class="grid-item">
-                            <a href="https://open.spotify.com/album/12t4AKkswqoBcGqKR03eu7?si=syZmCn6VSHm25l8BgBpHwQ" target="blank"><img src="https://res.cloudinary.com/dcyuf1hqs/image/upload/v1759070310/FALL_Album_Cover_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%87%E1%85%A5%E1%84%8C%E1%85%A5%E1%86%AB_apdddg.jpg" alt=""></a>
-                        </div>
-                        <div class="grid-caption">
-                            [FALL - stayhomeboi]
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- [수정 1] id="horzLine" -> class="horzLine" 으로 변경 (id 중복 제거) -->
-        <div class="horzLine"></div>
-        <div id="footer">
-            <div id="footer-list">
-                <ul>
-                    <li><a href="mailto:sp1@spreadseoul.com">sp1@spreadseoul.com</a></li>
-                    <li><a href="https://www.instagram.com/spreadseoul/">@spreadseoul</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://hojoonnow.dothome.co.kr/" target="_blank">권호준은 현재...</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://www.youtube.com/@tekhagi" target="_blank">tekhagi youtube</a></li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="https://www.youtube.com/@KwonHoJoon">spreadseoul youtube</a>
-                    </li>
-                </ul>
-            </div>
-            <ul></ul>
-        </div>
-    </div>
-    <script>
-            const textElements = document.querySelectorAll('.header-nav-kr, .captionKr, .container-maintext, .container-subtext, .grid-caption');
-
-            textElements.forEach(el => {
-            el.innerHTML = el.innerHTML.replace(/(?![^<]*>)([a-zA-Z0-9]+)/g, '<span class="en">$1</span>');
-        });
-    </script>
-    
 </body>
 </html>
