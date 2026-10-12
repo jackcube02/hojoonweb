@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store — spreadseoul</title>
-    <link rel="stylesheet" href="style.css?v=10">
-    <script src="script.js?v=5" defer></script>
-    <script src="works.js?v=4" defer></script>
+    <link rel="stylesheet" href="style.css?v=17">
+    <script src="script.js?v=8" defer></script>
+    <script src="works.js?v=7" defer></script>
+    <link rel='icon' href='data/img/spreadseoul_favi2.png'/>
 </head>
 <body>
     <a class="skip" href="#store">스토어로 바로 가기</a>
-    <!-- 화면 전체 너비를 사용하는 상단 헤더 -->
+    
     <header id="header">
         <p class="name"><a href="index.html" aria-label="스프레드서울 홈">spreadseoul</a></p>
+        <button id="menu-toggle" class="toggle" type="button" aria-expanded="false" aria-controls="nav">메뉴</button>
         <nav id="nav" aria-label="주 메뉴">
             <a href="index.html">works</a>
+            <a href="text.html">text</a>
             <a href="store.html" aria-current="page">store</a>
         </nav>
     </header>
@@ -38,7 +41,7 @@
             </address>
         </aside>
 
-        <!-- 마우스·터치로 드래그하거나 방향키로 너비를 조절합니다. -->
+        
         <div id="divider" role="separator" tabindex="0" aria-label="소개 영역 너비" aria-orientation="vertical" aria-controls="sidebar" aria-valuemin="0" aria-valuemax="60" aria-valuenow="28" aria-describedby="resize-help">
             <span class="grip" aria-hidden="true"></span>
         </div>
@@ -47,7 +50,7 @@
             <section id="list" aria-label="스토어"></section>
             <article id="detail" hidden aria-labelledby="work-title"></article>
         </main>
-        <!-- 모바일에서는 기존 연락처를 이 푸터로 이동합니다. -->
+        
         <footer id="footer" aria-label="연락처"></footer>
     </div>
 <script>

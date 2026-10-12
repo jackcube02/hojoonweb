@@ -1,6 +1,35 @@
-// 1.0의 작업 순서, 설명, 이미지, 원본 링크를 옮긴 목록입니다.
-// 새 작업은 같은 형식으로 추가하고, id는 다른 작업과 겹치지 않게 정하세요.
+
+
 const WORKS = [
+    {
+        "id": "index",
+        "title": "『index』 총서",
+        "thumb": "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1791383389/index-3-scan_llevbf.png",
+        "format": "",
+        "credits": [],
+        "description": [],
+        "images": [],
+        "credits": [
+            "<p>글 | <a href=\"https://spreadseoul.com/\" target=\"_blank\" rel=\"noopener noreferrer\">권호준</a></p>",
+            "<p>편집 | <a href=\"https://spreadseoul.com/\">권호준</a></p>",
+            "<p>발행 | <a href=\"https://spreadseoul.com/\">스프레드서울</a></p>"
+        ],
+        "description": [
+            {
+                "lang": "ko",
+                "html": "<p>스프레드서울이 전개하는 첫 번째 총서 시리즈 『index』는 여러 곳에 파편화되어 있는 지식을 하나의 색인처럼 모아, 가볍게 가지고 다니며 읽을 수 있는 소책자 형태로 선보입니다.<br><br>분야와 장르에 제한을 두지 않고 다양한 주제의 지식을 다루며, 각 권은 하나의 주제를 중심으로 필요한 정보와 이야기를 전달합니다. 『index』는 흩어져 있던 지식을 한곳에 모아, 필요할 때 꺼내어 살펴볼 수 있는 작은 색인을 지향합니다.<br><br>『index』는 계원예술대학교 정보관 7층(시각디자인과)과 4층(도서관)에서 무료로 받아가실 수 있습니다.</p>"
+            },
+            {
+                "lang": "en",
+                "html": "<p>『index』, the first booklet series by spreadseoul, brings together knowledge scattered across different sources into a single index, presented as compact booklets that are easy to carry and read.<br><br>Spanning a wide range of subjects without boundaries of discipline or genre, each issue focuses on a single topic and shares relevant information and stories. By gathering dispersed knowledge in one place, 『index』 aims to serve as a small, accessible index that readers can return to whenever they need it.<br><br>Free copies of 『index』 are available on the 7th floor (Department of Visual Design) and the 4th floor (Library) of the Information Center at Kaywon University of Art and Design.</p>"
+            }
+        ],
+        "images": [
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1791383389/index-3-scan_llevbf.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1791383391/index-1-scan_ixieiw.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1791383389/index-2-scan_tx37b9.png"
+        ],
+    },
     {
         "id": "work-01",
         "title": "《영원한 것은 없으므로》 — 사라져가는 장승을 찾아서",
@@ -563,7 +592,9 @@ const WORKS = [
         "title": "[FALL - stayhomeboi]",
         "thumb": "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1759070310/FALL_Album_Cover_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%87%E1%85%A5%E1%84%8C%E1%85%A5%E1%86%AB_apdddg.jpg",
         "format": "",
-        "credits": [],
+        "credits": [
+            "<p>커버 | <a href=\"https://www.instagram.com/ralphyforever/\" target=\"_blank\" rel=\"noopener noreferrer\">최정모</a></p>"
+        ],
         "description": [],
         "images": [
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1759070310/FALL_Album_Cover_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%87%E1%85%A5%E1%84%8C%E1%85%A5%E1%86%AB_apdddg.jpg"

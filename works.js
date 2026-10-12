@@ -1,14 +1,62 @@
-// 오른쪽 작업 영역만 교체합니다. 헤더와 소개, 조절선은 그대로 유지됩니다.
-const works = document.querySelector('#works, #store');
+
+const works = document.querySelector('#works, #store, #text');
 const list = document.querySelector('#list');
 const detail = document.querySelector('#detail');
 let listScroll = 0;
 let listMobile = false;
-// 모바일은 페이지 스크롤, 데스크탑은 오른쪽 영역 스크롤을 사용합니다.
+
 const mobileView = () => window.matchMedia('(max-width: 768px)').matches;
 let returnLink = null;
-const homeHash = works.id === 'store' ? '#store' : '#works';
-const homeTitle = works.id === 'store' ? 'Store — spreadseoul' : 'spreadseoul';
+const homeHash = `#${works.id}`;
+const homePage = { works: 'index.html', store: 'store.html', text: 'text.html' }[works.id];
+const homeTitle = { works: 'spreadseoul', store: 'Store — spreadseoul', text: 'Text — spreadseoul' }[works.id];
+const filter = document.querySelector('#filter');
+
+if (filter) {
+    const buttons = filter.querySelectorAll('button[data-filter]');
+    const cards = list.querySelectorAll('.work');
+    const status = document.querySelector('#filter-status');
+    filter.addEventListener('click', event => {
+        const button = event.target.closest('button[data-filter]');
+        if (!button || !filter.contains(button)) return;
+        const category = button.dataset.filter;
+        let count = 0;
+        for (const card of cards) {
+            const matches = category === 'all' || Array.from(card.querySelectorAll('.tags .tag')).some(tag => tag.classList.contains(category));
+            card.hidden = !matches;
+            if (matches) count++;
+        }
+        for (const item of buttons) {
+            item.setAttribute('aria-pressed', String(item === button));
+        }
+        status.textContent = `${button.textContent.trim()} 작업 ${count}개`;
+    });
+}
+
+const writings = new Map();
+
+for (const template of document.querySelectorAll('template[data-text]')) {
+    const title = template.content.querySelector('.text-title');
+    if (!title) continue;
+    const id = template.dataset.text;
+    writings.set(id, template);
+    const item = document.createElement('li');
+    item.className = 'text-item';
+    const link = document.createElement('a');
+    link.className = 'text-link';
+    link.href = `#text/${encodeURIComponent(id)}`;
+    link.dataset.text = id;
+    const label = document.createElement('p');
+    label.className = 'text-list-title';
+    label.textContent = title.textContent;
+    link.append(label);
+    const date = template.content.querySelector('.text-date');
+    if (date) link.append(date.cloneNode(true));
+    const author = template.content.querySelector('.text-author');
+    if (author) link.append(author.cloneNode(true));
+    item.append(link);
+    document.querySelector('.text-list').append(item);
+}
 const notices = new Map();
 let newsError = false;
 const newsReady = loadNews();
@@ -45,7 +93,7 @@ function showDetail(project) {
 }
 
 
-// 공통 HTML 한 파일에서 소식 목록과 본문을 가져옵니다.
+
 async function loadNews() {
     const newsList = document.querySelector('#news-list');
     try {
@@ -101,14 +149,25 @@ function showNews(article) {
     document.title = `${title.textContent} — spreadseoul`;
 }
 
+function showText(template) {
+    detail.innerHTML = `<div class="detail-top">${backLink()}</div>`;
+    const content = template.content.cloneNode(true);
+    const title = content.querySelector('.text-title');
+    title.id = 'text-title';
+    title.tabIndex = -1;
+    detail.append(content);
+    document.title = `${title.textContent} — spreadseoul`;
+}
+
 async function renderWork() {
     if (location.hash === lastHash) return;
     lastHash = location.hash;
     const route = location.hash;
     const isNews = route.startsWith('#news/');
+    const isText = route.startsWith('#text/');
     let id = '';
     try {
-        if (isNews || route.startsWith('#work/')) id = decodeURIComponent(route.slice(6));
+        if (isNews || isText || route.startsWith('#work/')) id = decodeURIComponent(route.slice(6));
     } catch { id = 'unknown'; }
 
     document.querySelectorAll('[data-news]').forEach(link => {
@@ -119,7 +178,7 @@ async function renderWork() {
     if (!id) {
         const returning = list.hidden;
         detail.hidden = true;
-        detail.replaceChildren(); // 목록으로 돌아가면 영상 재생도 멈춥니다.
+        detail.replaceChildren(); 
         list.hidden = false;
         document.title = homeTitle;
         if (returning) {
@@ -138,9 +197,9 @@ async function renderWork() {
     if (!list.hidden) {
         listMobile = mobileView();
         listScroll = listMobile ? window.scrollY : works.scrollTop;
-        returnLink = document.activeElement?.matches('[data-work], [data-news]') ? document.activeElement : null;
+        returnLink = document.activeElement?.matches('[data-work], [data-news], a[data-text]') ? document.activeElement : null;
     }
-    const project = !isNews && typeof WORKS !== 'undefined' ? WORKS.find(project => project.id === id) : null;
+    const project = !isNews && !isText && typeof WORKS !== 'undefined' ? WORKS.find(project => project.id === id) : null;
     list.hidden = true;
     detail.hidden = false;
     if (isNews) {
@@ -158,6 +217,13 @@ async function renderWork() {
             detail.innerHTML = `${backLink()}<h1 id="work-title" tabindex="-1">${newsError ? '소식을 불러오지 못했습니다.' : '소식을 찾을 수 없습니다.'}</h1><p>왼쪽 목록에서 다시 선택하거나 새로고침해 주세요.</p>`;
             document.title = '소식 — spreadseoul';
         }
+    } else if (isText) {
+        const template = writings.get(id);
+        if (template) showText(template);
+        else {
+            detail.innerHTML = `${backLink()}<h1 id="text-title" class="text-title" tabindex="-1">글을 찾을 수 없습니다.</h1><p class="text-body">글 목록에서 다시 선택해 주세요.</p>`;
+            document.title = '글을 찾을 수 없습니다 — spreadseoul';
+        }
     } else if (project) showDetail(project);
     else {
         detail.innerHTML = '<a class="back" href="#works" data-list aria-label="작업 목록으로 돌아가기" title="뒤로가기">←</a><h1 id="work-title" tabindex="-1">작업을 찾을 수 없습니다.</h1><p>전체 작업에서 다시 선택해 주세요.</p>';
@@ -165,7 +231,9 @@ async function renderWork() {
     }
     if (mobileView()) works.scrollIntoView({ block: 'start', behavior: 'instant' });
     else works.scrollTop = 0;
-    document.querySelector('#work-title').focus({ preventScroll: true });
+    const heading = detail.querySelector(isText ? '#text-title' : '#work-title');
+    detail.setAttribute('aria-labelledby', heading.id);
+    heading.focus({ preventScroll: true });
 }
 
 function navigateWork(hash) {
@@ -176,16 +244,16 @@ function navigateWork(hash) {
 document.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if (link.hasAttribute('data-work') || link.hasAttribute('data-list') || link.hasAttribute('data-news')) {
+    if (link.hasAttribute('data-work') || link.hasAttribute('data-list') || link.hasAttribute('data-news') || link.hasAttribute('data-text')) {
         event.preventDefault();
         navigateWork(link.getAttribute('href'));
-    } else if (link.closest('#nav') && link.getAttribute('href') === (works.id === 'store' ? 'store.html' : 'index.html')) {
+    } else if (link.closest('#nav') && link.getAttribute('href') === homePage) {
         event.preventDefault();
         navigateWork(homeHash);
     }
 });
 
-// 네트워크 문제로 이미지가 열리지 않아도 원본 링크와 작업명은 유지합니다.
+
 works.addEventListener('error', event => {
     const image = event.target;
     if (!(image instanceof HTMLImageElement) || image.hidden) return;
@@ -196,7 +264,7 @@ works.addEventListener('error', event => {
     image.after(message);
 }, true);
 
-// 목록은 index.html을 그대로 사용합니다. 제목·표지·스티커는 HTML에서 수정하세요.
+
 window.addEventListener('popstate', renderWork);
 window.addEventListener('hashchange', renderWork);
 renderWork();

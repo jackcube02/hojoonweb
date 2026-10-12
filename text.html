@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text — spreadseoul</title>
+    <link rel="stylesheet" href="style.css?v=17">
+    <script src="script.js?v=8" defer></script>
+    <script src="works.js?v=7" defer></script>
+    <link rel='icon' href='data/img/spreadseoul_favi2.png'/>
+</head>
+<body>
+    <a class="skip" href="#text">글 목록으로 바로 가기</a>
+    
+    <header id="header">
+        <p class="name"><a href="index.html" aria-label="스프레드서울 홈">spreadseoul</a></p>
+        <button id="menu-toggle" class="toggle" type="button" aria-expanded="false" aria-controls="nav">메뉴</button>
+        <nav id="nav" aria-label="주 메뉴">
+            <a href="index.html">works</a>
+            <a href="text.html" aria-current="page">text</a>
+            <a href="store.html">store</a>
+        </nav>
+    </header>
+    <div id="wrap">
+        <aside id="sidebar" aria-label="스프레드서울 소개">
+            <div class="sidebar-top">
+                <div class="intro">
+                    <p>스프레드서울은 권호준이 운영하는 그래픽/다매체 스튜디오로 주로 시각과 관련한 결과물들을 제작합니다. 확산, 전파를 의미하는 스프레드는 제작한 시각결과물로 세상에 더 나은 가치를 확산하고 전파하는 것을 목표합니다.
+                    <br><br>
+                    권호준은 시각 디자인을 기반으로 영상, 사진, 음악 등 다양한 매체를 활용한 작업을 시도합니다. 프로젝트 본질에 집중하여 어떻게 하면 다양한 사람들에게 새로운 시각과 긍정적 영향을 전달할 수 있을지 고민합니다.</p>
+                </div>
+                <section id="news" aria-label="소식">
+                    <div id="news-list" aria-live="polite">소식을 불러오는 중입니다.</div>
+                </section>
+            </div>
+            <address class="contact">
+                <a href="https://www.instagram.com/spreadseoul/" target="_blank" rel="noopener noreferrer">@spreadseoul ↗</a>
+                <a href="https://www.youtube.com/@tekhagi" target="_blank" rel="noopener noreferrer">Tekhagi ↗</a>
+                <a href="https://hojoonnow.dothome.co.kr/" target="_blank" rel="noopener noreferrer">wikiwikiwiki ↗</a>
+                <a class="email" href="mailto:sp1@spreadseoul.com">sp1@spreadseoul.com</a>
+            </address>
+        </aside>
+
+        
+        <div id="divider" role="separator" tabindex="0" aria-label="소개 영역 너비" aria-orientation="vertical" aria-controls="sidebar" aria-valuemin="0" aria-valuemax="60" aria-valuenow="28" aria-describedby="resize-help">
+            <span class="grip" aria-hidden="true"></span>
+        </div>
+        <p id="resize-help" class="sr-only">좌우 방향키로 너비 조절. Home은 최소 너비, End는 최대 너비로 조절합니다.</p>
+        <main id="text" tabindex="-1">
+            <section id="list" aria-label="글 목록">
+                <h1 class="sr-only">Text</h1>
+                <ul class="text-list"></ul>
+                <noscript>글 목록을 보려면 JavaScript를 켜 주세요.</noscript>
+            </section>
+            <article id="detail" hidden aria-labelledby="text-title"></article>
+        </main>
+        
+        <footer id="footer" aria-label="연락처"></footer>
+    </div>
+
+    <template data-text="text-01">
+        <h1 class="text-title">이미지</h1>
+        <time class="text-date" datetime="2026-10-10">2026.10.12</time>
+        <p class="text-author">글 · 권호준</p>
+        <div class="text-body">
+            <p>사진이 발명되어 현실을 이미지로 옮길 수 있게 되고, 인쇄 매체의 발달로 수많은 이미지와 텍스트가 복제되어 배포되기 시작했다. 나아가 영상 매체가 발전하고 필름에 사운드를 기록할 수 있게 되면서, 움직이는 이미지와 소리가 결합한 형태로 현실을 재현할 수 있게 되었다. 눈에 보이는 장면부터 귀에 들리는 소리까지, 말 그대로 ‘모든 것이 복제될 수 있는 시대’가 열렸다.
+
+            2025년 지금의 상황은 어떠한가? 우리는 인터넷이라는 공간에서 셀 수 없이 많은 이미지들과 영상들을 바라보며 살아간다. 거리에서도 수도 없이 많은 광고와 디지털 사이니지 등 눈을 감아야만 이미지들의 파도 속에서 숨을 쉴 수 있을 정도로 오늘날은 ‘대이미지 시대’라고 할 수 있다.
+
+            안타까운 점은 우리가 이토록 많은 이미지를 마주하는 주된 창구가 고작 손바닥만 한 크기의 사각형 화면인 핸드폰이라는 것이다. 핸드폰은 매일 이미지를 강제적으로 보게 만든다. 검색하지 않아도 이미 내가 어떤 것들에 관심이 있는지 알고리즘이 이미지들을 떠먹여 주고 있는 시대다. 우리는 더 이상 직접 어떠한 것을 경험하지 않아도, 그리고 직접 그 공간에 가보지 않아도 공간과 경험 자체를 경험할 수 있게 되었다. VR과 AR 같은 기술은 이러한 경험을 사각형 화면 바깥으로 확장한다. 눈앞의 시야를 감싸는 기기를 착용하면, 현실을 그대로 옮겨 놓은 듯한 가상 공간에 들어가거나 현실 위에 가상의 이미지를 겹쳐 볼 수 있다. 이 과정에서 우리는 ‘현실 같은 경험’, 혹은 현실을 경험하고 있다는 착각을 하기도 한다.
+            1967년 『스펙타클의 사회』가 출간되었을 당시와 오늘날의 가장 큰 차이점이라면 이미지의 생산과 유통에 알고리즘과 인공지능이 개입하게 되었다는 점이다. 어떤 이미지를 누구에게 보여 줄 것인지 결정하는 일을 이제 알고리즘이 상당 부분 대행한다. 그리고 AI의 생성형 이미지 기능이 나온 뒤로부터는 구글의 이미지 패널과 인스타그램의 피드 창에는 현실보다 더 현실 같은 이미지, 현실보다 한참은 동떨어져 있는 마치 동화 같고 환상적인 이미지들을 AI들이 생성해 배포되고 있다. 현실에서 직접 경험하지 않은 것을 경험시켜 주는 것을 넘어, 이제 현실에서 아예 경험할 수 없는 것들을 만들어 내 관람자에게 경험시키고 있는 상황이다.
+
+            한편, 인터넷 공간의 발전과 실시간 통신 환경이 구축되면서 SNS라는 새로운 영역이 개인의 삶 깊숙이 파고들기 시작했다. 이곳에서 사람들은 자신의 일상과 삶의 조각들을 이미지로 직접 생산하고, 편집하며, 자발적으로 게시하기 시작했는데, 이러한 행위는 단순한 ‘기록’을 넘어 게시자가 어떤 부분을 대중에게 노출할지 선택하고, 특정 부분을 강조하며, 이미지에 대한 개인적 검열을 수행하는 과정이 되었다.
+
+            이러한 의도적으로 가공된 표상들을 관람하는 대중은 다시 비슷한 성격의 이미지들을 서로 모방하고 재생산하는 순환에 참여하게 된다. 이로 인해 SNS에서 공유되는 이미지들은 양산화 과정을 거치며 시각적 패턴으로 확립되기 시작한다. 인터넷에서 가장 많은 이미지들을 보관하고 공유되고 있는 공간인 SNS는 더 이상 단순한 사실을 전달하는 이미지들이 아닌, 타인에게 보여 주기 위해 설계된 표상이자 이를 통해 특정한 것을 쟁취하거나 얻으려는 욕망이 담긴 기호로서 변모된다.
+            사람들은 무엇이 진짜이고 가짜인지 구분하려는 의지 없이 정보를 받아들이는 경향이 강해지고 있으며, 이러한 수동성은 이미지들이 더욱 과감하게 생산되게 만든다. 과거에는 이미지를 대중에게 배포하고 보여 주는 권한이 대형 미디어 기업과 같은 조직에 집중되어 있었다면, 오늘날에는 개인도 전문적인 기술이나 제도적 지위 없이 이미지를 생산하고 널리 유통할 수 있다. 다만 이미지 생산과 배포의 기회가 확대되었다고 해서, 그것이 누구에게 얼마나 보일지를 결정하는 권한까지 동등하게 나뉜 것은 아니다. 개인이 생산한 이미지는 여전히 플랫폼과 알고리즘이 구성한 질서 안에서 유통된다.
+
+            이러한 환경에서 우리는 이미지의 생산자인 동시에 관람자로 살아간다. 서로의 이미지를 바라보고 모방하기도 하며, 때로는 타인의 관심과 인정을 얻기 위해 경쟁한다. 인터넷은 이처럼 이미지로 자신을 드러내고 타인을 판단할 수 있는 공간이 되었으며, 사람들은 서로의 이미지를 통해 인터넷이라는 공간 속에서 대립 중인 관계에 놓여 있게 되었다.
+            </p>
+        </div>
+    </template>
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'oxu3gcj',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</body>
+</html>

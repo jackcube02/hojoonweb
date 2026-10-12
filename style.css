@@ -1,6 +1,6 @@
-/* 기본 색상과 글꼴 */
 *{
     box-sizing: border-box;
+    text-decoration-thickness: 1px;
 }
 
 ::selection{
@@ -8,10 +8,19 @@
     color: #171717;
 }
 
+#works, #store, #text{
+    scrollbar-width: none;
+}
+
+#works::-webkit-scrollbar, #store::-webkit-scrollbar, #text::-webkit-scrollbar{
+    display: none;
+}
+
 html, body{
     width: 100%;
     height: 100%;
     margin: 0;
+    overscroll-behavior: none;
 }
 
 body{
@@ -35,6 +44,7 @@ a{
 
 a:hover{
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
@@ -55,7 +65,7 @@ img{
 }
 
 :focus-visible{
-    outline: 2px solid #171717;
+    outline: 1px solid #171717;
     outline-offset: 4px;
 }
 
@@ -63,25 +73,27 @@ img{
 #wrap{
     --sidebar-width: clamp(220px, 28vw, 300px);
     display: grid;
-    grid-template-columns: var(--sidebar-width) 14px minmax(0, 1fr);
+    grid-template-columns: var(--sidebar-width) 21px minmax(0, 1fr);
     min-height: 0;
     overflow: hidden;
 }
 
-#sidebar, #works, #store{
+#sidebar, #works, #store, #text{
     min-width: 0;
     min-height: 0;
+    overflow-x: hidden;
     overflow-y: auto;
-    overscroll-behavior: contain;
+    overscroll-behavior: none;
 }
 
-/* 상단: 로고와 메뉴는 조절선 위에서 한 줄로 이어집니다. */
+
 #header{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    padding: 0, 0, 10px, 0;
     gap: 16px 48px;
     border-bottom: 1px solid #000000;
 }
@@ -89,7 +101,7 @@ img{
 #nav{
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 10px;
 }
 
 #nav a{
@@ -101,7 +113,7 @@ img{
     font-weight: 700;
 }
 
-/* 왼쪽: 소개, 연락처 */
+
 #sidebar{
     display: flex;
     flex-direction: column;
@@ -139,7 +151,7 @@ img{
     font-size: 14px;
 }
 
-/* 조절선: 선은 얇게, 잡을 수 있는 영역은 넓게 */
+
 #divider{
     position: relative;
     cursor: col-resize;
@@ -153,24 +165,32 @@ img{
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 6px;
+    left: 10px;
     width: 1px;
     background: #171717;
 }
 
 #divider:hover::before, #divider:focus-visible::before, .dragging #divider::before{
-    width: 2px;
+    width: 1px;
     background: #171717;
 }
 
 #divider:focus-visible{
-    outline-offset: -3px;
+    outline: none;
+}
+
+#divider:focus-visible .grip{
+    background: #171717;
+}
+
+.dragging #divider .grip{
+    background: #07fec0;
 }
 
 .grip{
     position: absolute;
     top: calc(50% - 22px);
-    left: 4px;
+    left: 8px;
     width: 5px;
     height: 100px;
     border: 1px solid #171717;
@@ -183,13 +203,13 @@ img{
     user-select: none !important;
 }
 
-/* 오른쪽: 작업 목록 */
-#works, #store{
+
+#works, #store, #text{
     container-type: inline-size;
 }
 
 #store h1{
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 h1{
@@ -198,7 +218,7 @@ h1{
     letter-spacing: -.04em;
 }
 
-/* HTML 순서대로 왼쪽 → 오른쪽, 다음 줄 순서로 배치합니다. */
+
 .grid{
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -248,7 +268,7 @@ h1{
     white-space: nowrap;
 }
 
-/* 실제 작업 목록: 기본 4열은 유지하고 오른쪽 너비에 맞춰 줄어듭니다. */
+
 .work-link{
     display: block;
 }
@@ -259,6 +279,7 @@ h1{
 
 .work-link:hover .work-title{
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
@@ -271,7 +292,7 @@ h1{
     height: auto;
 }
 
-/* 작업 상세 */
+
 #detail{
     width: 100%;
     max-width: none;
@@ -279,6 +300,7 @@ h1{
 }
 
 .detail-top{
+    display: flex;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #000000;
@@ -289,6 +311,17 @@ h1{
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    line-height: 1;
+}
+
+.bottom{
+    display: flex;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+#work-title:focus, #text-title:focus{
+    outline: none;
 }
 
 #work-title{
@@ -304,7 +337,7 @@ h1{
 
 .about{
     display: grid;
-    /* 스펙 길이에 맞추되, 설명 공간을 위해 최대 35%까지만 사용합니다. */
+    
     grid-template-columns: fit-content(35%) minmax(0, 1fr);
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -326,7 +359,7 @@ h1{
     display: none;
 }
 
-/* 정보와 설명 사이의 구분선, 한글·영문 두 열 */
+
 .description{
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -353,12 +386,14 @@ h1{
 .text a{
     color: blue;
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
 .info a{
     color: blue;
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
@@ -372,10 +407,9 @@ h1{
     gap: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #000;
-
 }
 
-/* 이미지 또는 영상이 하나뿐이면 전체 너비의 한 열로 표시합니다. */
+
 .gallery:has(> :only-child){
     grid-template-columns: minmax(0, 1fr);
 }
@@ -444,10 +478,6 @@ h1{
         grid-template-columns: 1fr;
     }
 
-    #detail{
-        padding: 6px 0 20px;
-    }
-
     .description{
         grid-template-columns: 1fr;
     }
@@ -455,11 +485,11 @@ h1{
 
 
 
-#works [hidden], #store [hidden]{
+#works [hidden], #store [hidden], #text [hidden]{
     display: none !important;
 }
 
-/* 제작 연도 스티커 — 검정 배경 설정은 유지합니다. */
+
 .tags{
     display: flex;
     flex-wrap: wrap;
@@ -470,18 +500,52 @@ h1{
 .tag{
     display: inline-block;
     padding: 2px 5px;
-    background: #181818;
-    color: #efefef;
+    border: 1px solid #171717;
+    background: #fff;
+    color: #171717;
     font-size: 12px;
     line-height: 1.5;
-}   
+}
 
-/* 사이트 링크 세 개와 이메일 사이에 한 줄 정도 여백을 둡니다. */
+.tag.year{
+    border: 0;
+    background: #181818;
+    color: #efefef;
+}
+
+#filter{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 0 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #171717;
+}
+
+#filter button{
+    min-height: 10px;
+    /* padding: 5px 5px; */
+    border: 1px solid #171717;
+    border-radius: 0px;
+}
+
+#filter button[aria-pressed="true"]{
+    background: #171717;
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    #filter button{
+        min-height: 10px;
+    }
+}
+
+
 .contact .email{
     margin-top: 1em;
 }
 
-/* 소개 아래 소식 목록 */
+
 .sidebar-top{
     flex-shrink: 0;
 }
@@ -514,19 +578,22 @@ h1{
 }
 
 .news-date{
+    display: block;
     font-size: 12px;
     color: #666;
 }
 
 .news-link[aria-current="page"] .news-title{
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
-/* 소식 본문도 오른쪽 영역의 전체 너비를 사용합니다. */
+
 .news-body{
     display: grid;
-    gap: 20px;
+    gap: 10px;
+    margin-top: 10px;
     line-height: 1.8;
     overflow-wrap: anywhere;
     word-break: keep-all;
@@ -538,15 +605,16 @@ h1{
 
 .news-body a{
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
-/* 데스크탑 연락처는 기존 사이드바에 유지합니다. */
+
 #footer{
     display: none;
 }
 
-/* 모바일: 헤더 → 소식 → 작업 → 연락처. 페이지 전체를 세로로 스크롤합니다. */
+
 @media (max-width: 768px){
     html, body{
         height: auto;
@@ -559,14 +627,14 @@ h1{
         min-height: 100vh;
         min-height: 100dvh;
         overflow: visible;
-        padding: 0 12px;
+        padding: 0 10px;
     }
 
     #header{
         flex-shrink: 0;
         gap: 8px 16px;
         margin-bottom: 0;
-        padding: 8px 0;
+        padding: 10px 0;
     }
 
     .name{
@@ -574,13 +642,13 @@ h1{
     }
 
     #nav{
-        gap: 16px;
+        gap: 10px;
     }
 
     #nav a{
         display: inline-flex;
         align-items: center;
-        min-height: 44px;
+        min-height: 10px;
         font-size: 14px;
     }
 
@@ -591,7 +659,7 @@ h1{
         overflow: visible;
     }
 
-    #sidebar, #works, #store{
+    #sidebar, #works, #store, #text{
         overflow: visible;
         overscroll-behavior: auto;
     }
@@ -606,7 +674,7 @@ h1{
 
     #news{
         margin-top: 0;
-        padding: 8px 0;
+        padding: 10px 0;
         border-top: 0;
         border-bottom: 1px solid #171717;
     }
@@ -623,14 +691,15 @@ h1{
         font-size: 14px;
     }
 
-    #works, #store{
+    #works, #store, #text{
         flex: 1;
+        padding: 10px 0;
     }
 
     .grid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px 12px;
-        padding: 10px 0px 10px 0;
+        padding: 0;
     }
 
     #detail{
@@ -649,7 +718,7 @@ h1{
 
     .about{
         grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
+        gap: 10px;
     }
 
     .info{
@@ -662,7 +731,7 @@ h1{
         border-left: 0;
         border-top: 1px solid #171717;
         padding-left: 0;
-        padding-top: 8px;
+        padding-top: 10px;
     }
 
     .gallery{
@@ -685,5 +754,186 @@ h1{
         align-items: center;
         min-height: 24px;
         font-size: 14px;
+    }
+}
+
+.text-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.text-item{
+    border-bottom: 1px solid #171717;
+}
+
+.text-link{
+    display: block;
+    padding: 10px 0;
+}
+
+.text-item:first-child .text-link{
+    padding-top: 0;
+}
+
+.text-link:hover{
+    text-decoration: none;
+}
+
+.text-link:hover .text-list-title{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.text-list-title{
+    /* margin-bottom: 10px; */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+}
+
+.text-date{
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.text-author{
+    font-size: 12px;
+    color: #666;
+}
+
+.text-title{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #171717;
+    font-size: clamp(26px, 3.5cqw, 40px);
+    font-weight: 400;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+}
+
+.text-body{
+    width: 100%;
+    max-width: 60rem;
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+}
+
+.text-body p{
+        font-family: "agchoijeongho-screen", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        white-space: pre-line;
+}
+
+.text-body > * + *{
+    margin-top: 10px;
+}
+
+.text-body img{
+    width: 100%;
+}
+
+.text-body a{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 768px){
+    .text-list-title{
+        font-size: 18px;
+    }
+
+    .text-title{
+        font-size: 26px;
+    }
+}
+
+.toggle{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .toggle{
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        min-height: 44px;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .toggle::after{
+        content: "";
+        display: block;
+        flex: 0 0 14px;
+        width: 14px;
+        height: 14px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M3 5L7 9L11 5' fill='none' stroke='%23171717' stroke-width='1'/%3E%3C/svg%3E") center / 14px 14px no-repeat;
+        transform: rotate(0deg);
+        transform-origin: center;
+    }
+
+    .toggle[aria-expanded="true"]::after{
+        transform: rotate(180deg);
+    }
+
+    #nav{
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 10px;
+        border-top: 1px solid #171717;
+    }
+
+    #menu-toggle[aria-expanded="true"] + #nav{
+        display: flex;
+    }
+
+    #header:has(#menu-toggle[aria-expanded="true"]){
+        row-gap: 10px;
+    }
+
+    #filter-toggle{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #171717;
+    }
+
+    #filter-toggle::after{
+        margin-left: auto;
+    }
+
+    #filter{
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #filter button{
+        text-align: left;
+    }
+
+    #filter-toggle[aria-expanded="true"] + #filter{
+        display: flex;
     }
 }
