@@ -78,7 +78,7 @@ function showDetail(project) {
     const title = project.detailTitle || project.title;
     const credits = project.credits.map(html => `<div>${html}</div>`).join('');
     const descriptions = project.description.map(text => `<div class="text" lang="${text.lang}">${text.html}</div>`).join('');
-    const images = project.images.map((src, index) => `<a class="image" href="${escapeText(src)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeText(title)} 이미지 ${index + 1} 원본 보기"><img src="${escapeText(src)}" alt="${escapeText(title)} — ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}" decoding="async"></a>`).join('');
+    const images = project.images.map((src, index) => `<a class="image" href="${escapeText(src)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeText(title)} 이미지 ${index + 1} 크게 보기"><img src="${escapeText(src)}" alt="${escapeText(title)} — ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}" decoding="async"></a>`).join('');
     const video = project.video ? `<div class="film"><iframe src="${escapeText(project.video)}" title="${escapeText(title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>` : '';
     detail.innerHTML = `
         <div class="detail-top"><a class="back" href="#works" data-list aria-label="작업 목록으로 돌아가기" title="뒤로가기">←</a></div>
@@ -162,6 +162,7 @@ function showText(template) {
 async function renderWork() {
     if (location.hash === lastHash) return;
     lastHash = location.hash;
+    if (viewer.open) viewer.close();
     const route = location.hash;
     const isNews = route.startsWith('#news/');
     const isText = route.startsWith('#text/');
@@ -236,6 +237,45 @@ async function renderWork() {
     heading.focus({ preventScroll: true });
 }
 
+const viewer = document.createElement('dialog');
+viewer.id = 'viewer';
+viewer.setAttribute('aria-label', '작업 이미지 크게 보기');
+viewer.innerHTML = `<img id="viewer-image" alt=""><p id="viewer-status" role="status"></p>`;
+document.body.append(viewer);
+const viewerImage = viewer.querySelector('#viewer-image');
+const viewerStatus = viewer.querySelector('#viewer-status');
+let imageScroll = 0;
+
+function openImage(link) {
+    viewerImage.alt = link.querySelector('img').alt;
+    viewerStatus.textContent = '이미지를 불러오는 중입니다.';
+    viewerImage.hidden = false;
+    viewerImage.src = link.href;
+    imageScroll = window.scrollY;
+    document.documentElement.style.setProperty('--image-scroll', `-${imageScroll}px`);
+    document.documentElement.classList.add('image-open');
+    viewer.showModal();
+}
+
+viewerImage.addEventListener('load', () => {
+    viewerStatus.textContent = '';
+});
+viewerImage.addEventListener('error', () => {
+    viewerImage.hidden = true;
+    viewerStatus.textContent = '이미지를 불러오지 못했습니다. 잠시 후 다시 열어 주세요.';
+});
+viewer.addEventListener('click', event => {
+    if (event.target === viewer) viewer.close();
+});
+viewer.addEventListener('close', () => {
+    document.documentElement.classList.remove('image-open');
+    document.documentElement.style.removeProperty('--image-scroll');
+    window.scrollTo({ top: imageScroll, behavior: 'instant' });
+    viewerImage.removeAttribute('src');
+    viewerImage.alt = '';
+    viewerStatus.textContent = '';
+});
+
 function navigateWork(hash) {
     if (location.hash !== hash) history.pushState(null, '', hash);
     renderWork();
@@ -244,7 +284,10 @@ function navigateWork(hash) {
 document.addEventListener('click', event => {
     const link = event.target.closest('a');
     if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if (link.hasAttribute('data-work') || link.hasAttribute('data-list') || link.hasAttribute('data-news') || link.hasAttribute('data-text')) {
+    if (link.matches('.gallery a.image')) {
+        event.preventDefault();
+        openImage(link);
+    } else if (link.hasAttribute('data-work') || link.hasAttribute('data-list') || link.hasAttribute('data-news') || link.hasAttribute('data-text')) {
         event.preventDefault();
         navigateWork(link.getAttribute('href'));
     } else if (link.closest('#nav') && link.getAttribute('href') === homePage) {

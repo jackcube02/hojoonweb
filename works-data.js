@@ -2,6 +2,45 @@
 
 const WORKS = [
     {
+        "id": "sorimadang",
+        "title": "소리마당",
+        "thumb": "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210883/Artboard_6_copy_sey8g6.png",
+        "format": "",
+        "credits": [
+            "<p>음원 | 5트랙, 24분 39초</p>",
+            "<p>CD 케이스 | 124 × 142mm</p>",
+            "<p><a href=\"https://www.instagram.com/spreadseoul/\" target=\"_blank\" rel=\"noopener noreferrer\">권호준</a></p>",
+            "<p><a href=\"https://www.instagram.com/maynoook/\" target=\"_blank\" rel=\"noopener noreferrer\">박민욱</a></p>",
+            "<p><a href=\"https://www.instagram.com/hyokwii/\" target=\"_blank\" rel=\"noopener noreferrer\">박찬혁</a></p>",
+            "<p><a href=\"https://m0y2e0ng.github.io/songmyeongseon/\" target=\"_blank\" rel=\"noopener noreferrer\">송명선</a></p>",
+            "<p><a href=\"https://www.instagram.com/juheeehan/\" target=\"_blank\" rel=\"noopener noreferrer\">한주희</a></p>"
+        ],
+        "description": [
+            {
+                "lang": "ko",
+                "html": "<p>30일간 5명이 <a href=\"https://m0y2e0ng.github.io/times/\" target=\"_blank\" rel=\"noopener noreferrer\">times 웹사이트</a>에서 무작위로 배정해주는 시간대에 아이폰의 음성 녹음 앱을 활용해 1분간 녹음하며 소리를 채집했다. 채집한 소리의 원본은 <a href=\"https://jackcube02.github.io/30Days-Sound/\" target=\"_blank\" rel=\"noopener noreferrer\">30DaySound</a>에서 청취할 수 있다.<br><br>그다음 우리는 일종의 오디오 콜라주인 ‘<a href=\"https://jackcube02.github.io/sorimadang/index.html\" target=\"_blank\" rel=\"noopener noreferrer\">소리마당</a>’을 진행했다. 소리마당은 개인이 채집한 30개의 녹음 파일을 가지고 어도비 오디션, 로직과 같은 오디오 편집 프로그램을 이용해 원본의 소리를 자르고 재배치하거나, 음량과 음색을 조정하고, 레이어링과 믹싱을 통해 여러 소리를 결합해 새로운 소리를 만들거나 유기적인 맥락을 갖도록 시도해본 작업이다.<br><br>소리마당 웹사이트에서는 우리가 작업한 소리마당 플레이리스트를 청취할 수 있다. 또한 사용자도 우리가 30일간 채집한 소리들을 직접 짜깁기해 자신만의 소리마당을 펼쳐볼 수 있다.</p>"
+            },
+            {
+                "lang": "en",
+                "html": "<p>Over 30 days, five participants collected sounds by making one-minute recordings with the iPhone’s Voice Memos app at times randomly assigned by the <a href=\"https://m0y2e0ng.github.io/times/\" target=\"_blank\" rel=\"noopener noreferrer\">times website</a>. The original recordings can be heard on <a href=\"https://jackcube02.github.io/30Days-Sound/\" target=\"_blank\" rel=\"noopener noreferrer\">30DaySound</a> as part of this sound collection project.<br><br>We then developed <a href=\"https://jackcube02.github.io/sorimadang/index.html\" target=\"_blank\" rel=\"noopener noreferrer\">Sorimadang</a>, a form of audio collage. Working with the 30 recordings each person had collected, we used audio editing software such as Adobe Audition and Logic to cut and rearrange the original sounds, adjust their volume and timbre, and combine them through layering and mixing. Through this process, we explored ways to create new sounds or bring the recordings into an organically connected whole.<br><br>On this webpage, you can listen to our Sorimadang playlist. You can also piece together the sounds we collected over the 30 days to create a Sorimadang of your own.</p>"
+            }
+        ],
+        "images": [
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210883/Artboard_6_copy_sey8g6.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210883/Artboard_6_copy_2_gpi9gw.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210884/Artboard_6_copy_3_ciweol.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210882/Artboard_6_copy_4_w4l1ne.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210882/Artboard_6_copy_9_drbsys.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210882/Artboard_6_copy_5_kaqzdg.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210881/Artboard_6_copy_6_oriwqg.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210882/Artboard_6_copy_8_crazqx.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210883/Artboard_6_copy_10_c2ol72.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210882/Artboard_8_vgzwbr.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210881/Artboard_7_gjyv4q.png",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793210881/Artboard_6_tccxfx.png"
+        ],
+    },
+    {
         "id": "index",
         "title": "『index』 총서",
         "thumb": "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1791383389/index-3-scan_llevbf.png",
@@ -190,7 +229,7 @@ const WORKS = [
         "id": "cargoIden",
         "title": "카고자동차",
         "thumb": "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778589407/cargoIden_1_o3jzdo.jpg",
-        "format": "아이덴티티 디자인 | 간판 및 명함 | 8 x 1.5 미터, 90 x 60밀리미터 | 2026년",
+        "format": "8 x 1.5 미터, 90 x 60밀리미터 | 2026년",
         "credits": [],
         "description": [
             {
