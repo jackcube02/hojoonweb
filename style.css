@@ -970,9 +970,9 @@ h1{
 }
 
 #viewer::backdrop{
-    background: rgba(0, 0, 0, .5);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
+    background: rgba(0, 0, 0, .2);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
 }
 
 #viewer-image{

@@ -152,7 +152,6 @@ const WORKS = [
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1782300691/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8F%E1%85%B2%E1%84%82%E1%85%A1%E1%84%87%E1%85%B2%E1%86%AF%E1%84%85%E1%85%A1_webSns_15_scjlaa.png",
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1782300692/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8F%E1%85%B2%E1%84%82%E1%85%A1%E1%84%87%E1%85%B2%E1%86%AF%E1%84%85%E1%85%A1_webSns_16_thnidd.png",
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1782300693/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8F%E1%85%B2%E1%84%82%E1%85%A1%E1%84%87%E1%85%B2%E1%86%AF%E1%84%85%E1%85%A1_webSns_17_baewgf.png",
-            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1782300693/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8F%E1%85%B2%E1%84%82%E1%85%A1%E1%84%87%E1%85%B2%E1%86%AF%E1%84%85%E1%85%A1_webSns_17_baewgf.png",
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1782300695/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8F%E1%85%B2%E1%84%82%E1%85%A1%E1%84%87%E1%85%B2%E1%86%AF%E1%84%85%E1%85%A1_webSns_18_s8t2i3.png"
         ],
         "video": "",
@@ -196,7 +195,19 @@ const WORKS = [
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778230284/jangseungTalk_web_7_edjfxn.jpg",
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778230287/jangseungTalk_web_8_sjncd7.jpg",
             "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778230286/jangseungTalk_web_9_hsiqno.jpg",
-            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778230284/jangseungTalk_web_10_uvlbbx.jpg"
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1778230284/jangseungTalk_web_10_uvlbbx.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253683/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_2_klwvui.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253683/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_3_iuqup6.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253683/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_5_iikbh0.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253684/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_6_gyzfyt.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253684/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_8_ohfa0j.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253683/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_9_hz6n2k.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253685/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_10_n8ksiu.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253685/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_12_o3ptja.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253685/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_13_ilkptz.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253685/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_14_ehspwn.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253684/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_15_klu4tg.jpg",
+            "https://res.cloudinary.com/dcyuf1hqs/image/upload/v1793253685/%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B3%E1%86%BC%E1%84%83%E1%85%A2%E1%84%92%E1%85%AA_%E1%84%8B%E1%85%A1%E1%86%B8%E1%84%8E%E1%85%AE%E1%86%A8_16_edz5e2.jpg"
         ],
         "video": "",
         "link": "",
